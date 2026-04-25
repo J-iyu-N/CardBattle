@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6dc7e7b4d1a5042acb240c0c51e3a5, type: 3}
   m_Name: Card_Shield1
   m_EditorClassIdentifier: Assembly-CSharp::CardData
+  sortIndex: 1
   cardName: "\uBC29\uC5B4\uB9C9"
   cardType: 1
   cardOwner: 2

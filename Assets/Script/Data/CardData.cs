@@ -9,6 +9,7 @@ public enum CardOwner {All, Char1, Char2}
 [CreateAssetMenu(fileName = "NewCard", menuName = "BattleGame/CardData")]
 public class CardData : ScriptableObject
 {
+    public int sortIndex;
     public string cardName;
     public CardType cardType;
     public CardOwner cardOwner;
