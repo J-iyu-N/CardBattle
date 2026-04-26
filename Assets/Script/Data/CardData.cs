@@ -12,7 +12,7 @@ public class CardData : ScriptableObject
 {
     public int sortIndex;
     public string cardName;
-    public Image cardIcon;
+    public Sprite cardIcon;
     public CardType cardType;
     public CardOwner cardOwner;
     [TextArea] public string description;

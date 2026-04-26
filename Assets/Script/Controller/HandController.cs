@@ -16,6 +16,7 @@ public class HandController : MonoBehaviour
         Hand = new List<CardData>();
         Discard = new List<CardData>();
         Shuffle(Deck);
+        RefillHand();
     }
      public void RefillHand()
     {

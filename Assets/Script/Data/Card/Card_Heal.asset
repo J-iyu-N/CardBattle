@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6dc7e7b4d1a5042acb240c0c51e3a5, type: 3}
   m_Name: Card_Heal
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  sortIndex: 2
+  sortIndex: 10
   cardName: "\uD68C\uBCF5"
+  cardIcon: {fileID: 0}
   cardType: 0
   cardOwner: 0
   description: "\uD68C\uBCF5\uCE74\uB4DC"

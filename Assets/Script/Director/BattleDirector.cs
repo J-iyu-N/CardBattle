@@ -6,6 +6,7 @@ public class BattleDirector : MonoBehaviour
     public PlayerCharacterController char2;
     public EnemyController enemy;
     public CardSlotController cardSlot;
+    public HandUIDirector handUIDirector;
 
     public bool battleEnd;
     public void Start()
@@ -33,6 +34,7 @@ public class BattleDirector : MonoBehaviour
         // 페이즈 시작 
         cardSlot.OnPageStart();
         enemy.OnPageStart();
+        handUIDirector.RefreshHandUI();
 
         Debug.Log("=== 라운드 시작 ===");
         Debug.Log($"적 예고 행동: {enemy.State.CurrentAction.actionName}");

@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6dc7e7b4d1a5042acb240c0c51e3a5, type: 3}
   m_Name: Card_Attack3
   m_EditorClassIdentifier: Assembly-CSharp::CardData
+  sortIndex: 2
   cardName: "\uBCA0\uAE30"
+  cardIcon: {fileID: 0}
   cardType: 0
   cardOwner: 1
-  description: 
+  description: "\uC288\uC289"
   effects:
   - effectType: 0
     rangeMin: 4

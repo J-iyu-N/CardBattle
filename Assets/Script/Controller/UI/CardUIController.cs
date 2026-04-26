@@ -21,7 +21,7 @@ public class CardUIController : MonoBehaviour
 
         if (data.cardIcon != null)
         {
-            icon = data.cardIcon;
+            icon.sprite = data.cardIcon;
         }
     }
 }
