@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.XR;
+using UnityEngine.EventSystems;
 
 public class CardSlotController : MonoBehaviour
 {
@@ -55,9 +55,7 @@ public class CardSlotController : MonoBehaviour
         //캐릭터 1 2 가 사용할 수 있는 카드인지 확인
         if(card.cardOwner==CardOwner.All) return true;
         if(card.cardOwner==CardOwner.Char1&&charIndex==1) return true;
-        if(card.cardOwner==CardOwner.Char2&&charIndex==2) return true;
-        
+        if(card.cardOwner==CardOwner.Char2&&charIndex==2) return true;       
         return false;
     }
-
 }
