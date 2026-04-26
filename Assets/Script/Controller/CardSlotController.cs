@@ -22,24 +22,30 @@ public class CardSlotController : MonoBehaviour
     }
     public void Onchar1Click()
     {
+        Debug.Log("선택 카드: " + selectCard.cardName + ", owner: " + selectCard.cardOwner);
+        Debug.Log("CanAssign 결과: " + CanAssignCard(selectCard, 1));
         if(selectCard==null) return;
         if(CanAssignCard(selectCard,1)==false) return;
         if(slotCard1 != null)
         {
             handController.ReturnCard(slotCard1); // 슬롯에 이미 카드 있으면 교환
         }
+        Debug.Log("캐릭터1 클릭됨");
         handController.Hand.Remove(selectCard);
         slotCard1 = selectCard;
         selectCard = null;
     }
     public void Onchar2Click()
     {
+        Debug.Log("선택 카드: " + selectCard.cardName + ", owner: " + selectCard.cardOwner);
+        Debug.Log("CanAssign 결과: " + CanAssignCard(selectCard, 2));
         if(selectCard==null) return;
         if(CanAssignCard(selectCard,2)==false) return;
         if(slotCard2 != null)
         {
             handController.ReturnCard(slotCard2); // 슬롯에 이미 카드 있으면 교환
         }
+        Debug.Log("캐릭터2 클릭됨");
         handController.Hand.Remove(selectCard);
         slotCard2 = selectCard;
         selectCard = null;

@@ -4,10 +4,40 @@ public class PlayerCharacterController : MonoBehaviour
 {
     public CharacterData Data;
     public RuntimeCharacterState State;
+    public CardSlotController cardSlotController;
     public int shield;
+    public int characterIndex;
     void Awake()
     {
         State = new RuntimeCharacterState(Data);
+    }
+    void Update()
+    {
+        CharacterClick();
+    }
+    public void CharacterClick()
+    {
+        if(cardSlotController.selectCard == null) return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
+            Collider2D hit = Physics2D.OverlapPoint(mousePos); // 콜라이더 2D 컴포넌트 붙어 있어야됨
+
+            if(hit == null) return;
+            if(hit.gameObject != this.gameObject) return;
+            if(cardSlotController.selectCard == null) return;
+
+            if(characterIndex == 1)
+            {
+                cardSlotController.Onchar1Click();
+            }
+            if(characterIndex == 2)
+            {
+                cardSlotController.Onchar2Click();
+            }
+        }
+
     }
     public void AddShield(int amount)
     {
