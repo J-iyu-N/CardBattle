@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using Microsoft.Unity.VisualStudio.Editor;
 public class HandUIDirector : MonoBehaviour
 {
     public HandController handController;
@@ -12,12 +10,6 @@ public class HandUIDirector : MonoBehaviour
     public List<CardData> sortedHand; // 정렬된 카드 저장
 
     [SerializeField] float cardSpacing = 2f;
-
-    [Header("카드 프리팹 UI 연결")]
-    public Image icon;
-    public TextMeshPro cardName;
-    public TextMeshPro damage;
-    public TextMeshPro desc;
 
     public void RefreshHandUI()
     {

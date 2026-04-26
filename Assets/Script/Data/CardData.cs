@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 // 카드 종류
 public enum CardType {Attack, Defend, Special}
@@ -11,6 +12,7 @@ public class CardData : ScriptableObject
 {
     public int sortIndex;
     public string cardName;
+    public Image cardIcon;
     public CardType cardType;
     public CardOwner cardOwner;
     [TextArea] public string description;
