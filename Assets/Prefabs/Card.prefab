@@ -195,6 +195,8 @@ MonoBehaviour:
   icon: {fileID: 3023422731491881747}
   cardName: {fileID: 5567222546236006069}
   desc: {fileID: 6983451141308516195}
+  cardSlotController: {fileID: 0}
+  highlite: {fileID: 6256521743628868911}
 --- !u!1 &5857991626582886211
 GameObject:
   m_ObjectHideFlags: 0
