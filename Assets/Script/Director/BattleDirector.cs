@@ -23,8 +23,8 @@ public class BattleDirector : MonoBehaviour
         {
             //cardSlot.slotCard1 = cardSlot.handController.Hand[0];
             //cardSlot.slotCard2 = cardSlot.handController.Hand[1];
-            Debug.Log($"슬롯1: {cardSlot.slotCard1.cardName}");
-            Debug.Log($"슬롯2: {cardSlot.slotCard2.cardName}");
+            //Debug.Log($"슬롯1: {cardSlot.slotCard1.cardName}");
+            //Debug.Log($"슬롯2: {cardSlot.slotCard2.cardName}");
         }
         OncConfrimButton();
     }

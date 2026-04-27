@@ -968,7 +968,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 061b0cb765bee8e479ae7f51a910ae03, type: 2}
   - {fileID: 11400000, guid: df095b454353241488669b55e4da076c, type: 2}
   - {fileID: 11400000, guid: 21bbc9460acd9fc498e24a7bac2e0037, type: 2}
-  - {fileID: 11400000, guid: 21bbc9460acd9fc498e24a7bac2e0037, type: 2}
+  - {fileID: 11400000, guid: 3cc57886bd1ab694b9a65fee07fbbed2, type: 2}
   handSize: 6
   Hand: []
 --- !u!4 &1529880279
