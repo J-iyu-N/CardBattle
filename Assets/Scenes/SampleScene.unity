@@ -908,6 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardSlotController
   handController: {fileID: 1529880278}
+  handUIDirector: {fileID: 1748704210}
   selectCard: {fileID: 0}
   slotCard1: {fileID: 0}
   slotCard2: {fileID: 0}
@@ -957,16 +958,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HandController
   StartDeck:
   - {fileID: 11400000, guid: e021b8944b852e642bd95ed7cfdfe389, type: 2}
+  - {fileID: 11400000, guid: 2bdead9d30d82fb4eb2633d8c03b368c, type: 2}
   - {fileID: 11400000, guid: c95d17117727f2a419de94042c95f5d2, type: 2}
+  - {fileID: 11400000, guid: 1c5fce1bbd5145a4f933d58e40312ef4, type: 2}
   - {fileID: 11400000, guid: db62317bc5f6afb4ba772b15aac44b76, type: 2}
+  - {fileID: 11400000, guid: 1eb5168be68aa60408b400496f417268, type: 2}
+  - {fileID: 11400000, guid: 9c1d7f722b4c6664b8d33974c7efcd85, type: 2}
+  - {fileID: 11400000, guid: b41b9e3520aebe34093c293a5c1e4232, type: 2}
   - {fileID: 11400000, guid: 061b0cb765bee8e479ae7f51a910ae03, type: 2}
+  - {fileID: 11400000, guid: df095b454353241488669b55e4da076c, type: 2}
   - {fileID: 11400000, guid: 21bbc9460acd9fc498e24a7bac2e0037, type: 2}
-  - {fileID: 11400000, guid: 9c1d7f722b4c6664b8d33974c7efcd85, type: 2}
-  - {fileID: 11400000, guid: e021b8944b852e642bd95ed7cfdfe389, type: 2}
-  - {fileID: 11400000, guid: c95d17117727f2a419de94042c95f5d2, type: 2}
-  - {fileID: 11400000, guid: db62317bc5f6afb4ba772b15aac44b76, type: 2}
-  - {fileID: 11400000, guid: 9c1d7f722b4c6664b8d33974c7efcd85, type: 2}
-  - {fileID: 11400000, guid: 061b0cb765bee8e479ae7f51a910ae03, type: 2}
   - {fileID: 11400000, guid: 21bbc9460acd9fc498e24a7bac2e0037, type: 2}
   handSize: 6
   Hand: []

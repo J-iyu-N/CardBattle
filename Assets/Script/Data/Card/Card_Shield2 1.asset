@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6dc7e7b4d1a5042acb240c0c51e3a5, type: 3}
+  m_Name: Card_Shield2 1
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  sortIndex: 21
+  cardName: "\uBC29\uD328"
+  cardIcon: {fileID: 0}
+  cardType: 1
+  cardOwner: 2
+  description: "\uBC29\uD328\u3150\u3150\u3150"
+  effects:
+  - effectType: 2
+    rangeMin: 3
+    rangeMax: 3
+    percent: 0
