@@ -3,25 +3,39 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using NUnit.Framework;
-using System;
+using UnityEngine.XR;
 
 // 카드 데이터 매핑
 // 카드 프리팹에 코드 붙이기
 public class CardUIController : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public CardData cardData;
+    public HandUIDirector handUIDirector;
     [Header("카드 프리팹 UI 연결")]
     public Image icon;
     public TextMeshProUGUI cardName;
     //public TextMeshPro damage;
     public TextMeshProUGUI desc;
     public CardSlotController cardSlotController;
+
+    [Header("하이라이트 오브젝트 연결")]
     public GameObject highlite;
+    public GameObject highliteChar1;
+    public GameObject highliteChar2;
+
+    // 선택 
     bool isSelected;
+    bool isHovered;
+    bool isChar1Selected;
+    bool isChar2Selected;
     void Awake()
     {
         cardSlotController = FindAnyObjectByType<CardSlotController>();
+        handUIDirector = FindAnyObjectByType<HandUIDirector>();
+
         highlite.SetActive(false);
+        highliteChar1.SetActive(false);
+        highliteChar2.SetActive(false);
     }
     public void FillCardData(CardData data)
     {
@@ -43,26 +57,25 @@ public class CardUIController : MonoBehaviour, IPointerClickHandler, IPointerEnt
 
         // 카드 강조
         CheckSelected();
-        if (isSelected)
-        {
-            highlite.SetActive(true);
-        }
+        UpdateHighlite();
+        handUIDirector.RefreshCardHighlite();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
         // 호버 되면 카드 강조
-        highlite.SetActive(true);
+        isHovered = true;
+        CheckSelected();
+        UpdateHighlite();
+        handUIDirector.RefreshCardHighlite();
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         // 클릭되지 않은 카드면 나가면 강조 꺼짐
         // 클릭된 카드면 강조 유지
+        isHovered = false;
         CheckSelected();
-        if (isSelected)
-        {
-            return;
-        }
-        highlite.SetActive(false);
+        UpdateHighlite();
+        handUIDirector.RefreshCardHighlite();
     }
     public void CheckSelected()
     {
@@ -73,6 +86,51 @@ public class CardUIController : MonoBehaviour, IPointerClickHandler, IPointerEnt
         else
         {
             isSelected = false;
+        }
+        if(cardSlotController.slotCard1 == cardData)
+        {
+            isChar1Selected = true;
+            isSelected = false;
+        }
+        else
+        {
+            isChar1Selected = false;
+        }
+        if(cardSlotController.slotCard2 == cardData)
+        {
+            isChar2Selected = true;
+            isSelected = false;
+        }
+        else
+        {
+            isChar2Selected = false;
+        }
+    }
+    public void UpdateHighlite()
+    {
+        if (isChar1Selected)
+        {
+            highlite.SetActive(false);
+            highliteChar1.SetActive(true);
+            highliteChar2.SetActive(false);
+        }
+        else if (isChar2Selected)
+        {
+            highlite.SetActive(false);
+            highliteChar1.SetActive(false);
+            highliteChar2.SetActive(true);
+        }
+        else if (isSelected||isHovered)
+        {
+            highlite.SetActive(true);
+            highliteChar1.SetActive(false);
+            highliteChar2.SetActive(false);
+        }
+        else
+        {
+            highlite.SetActive(false);
+            highliteChar1.SetActive(false);
+            highliteChar2.SetActive(false);
         }
     }
 }

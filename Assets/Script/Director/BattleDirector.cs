@@ -17,7 +17,6 @@ public class BattleDirector : MonoBehaviour
     }
     void Update()
 {
-    
     if (Input.GetKeyDown(KeyCode.Space))
     {
         if (cardSlot.handController.Hand.Count >= 2)

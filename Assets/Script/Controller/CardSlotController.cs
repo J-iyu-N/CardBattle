@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public class CardSlotController : MonoBehaviour
 {
     public HandController handController;
+    public HandUIDirector handUIDirector;
     public CardData selectCard;
     public CardData slotCard1;
     public CardData slotCard2;
@@ -15,10 +16,12 @@ public class CardSlotController : MonoBehaviour
         slotCard2 = null;
         
         handController.RefillHand(); // 카드 리필
+        handUIDirector.RefreshCardHighlite();
     }
     public void OncardClicked(CardData card)
     {
         selectCard = card;
+        handUIDirector.RefreshCardHighlite();
     }
     public void Onchar1Click()
     {
@@ -34,6 +37,7 @@ public class CardSlotController : MonoBehaviour
         handController.Hand.Remove(selectCard);
         slotCard1 = selectCard;
         selectCard = null;
+        handUIDirector.RefreshCardHighlite();
     }
     public void Onchar2Click()
     {
@@ -49,6 +53,7 @@ public class CardSlotController : MonoBehaviour
         handController.Hand.Remove(selectCard);
         slotCard2 = selectCard;
         selectCard = null;
+        handUIDirector.RefreshCardHighlite();
     }
     public void ConfirmCard()
     {

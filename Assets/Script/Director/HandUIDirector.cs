@@ -9,7 +9,6 @@ public class HandUIDirector : MonoBehaviour
 
     public List<GameObject> cardUIList;
     public List<CardData> sortedHand; // 정렬된 카드 저장
-
     public void Start()
     {
         RefreshHandUI();
@@ -20,6 +19,7 @@ public class HandUIDirector : MonoBehaviour
         SortHand(); // 순서 정렬
         UpdateCardUI(); // 카드 ui 표시
         UpdateCardData(); // 카드 내용 채우기
+        RefreshCardHighlite(); // 카드 강조 표시 갱신
     }
     public void SortHand()
     {
@@ -72,6 +72,16 @@ public class HandUIDirector : MonoBehaviour
             GameObject cardObject = cardUIList[i];
             CardUIController cardUIController = cardObject.GetComponent<CardUIController>();
             cardUIController.FillCardData(sortedHand[i]);
+        }
+    }
+    public void RefreshCardHighlite()
+    {
+        // 하이라이트 갱신
+        for(int i = 0; i < sortedHand.Count; i++)
+        {
+            CardUIController cardUIController = cardUIList[i].GetComponent<CardUIController>();
+            cardUIController.CheckSelected();
+            cardUIController.UpdateHighlite();
         }
     }
 }
