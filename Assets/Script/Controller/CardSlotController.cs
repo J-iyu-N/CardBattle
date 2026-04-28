@@ -29,6 +29,10 @@ public class CardSlotController : MonoBehaviour
         Debug.Log("CanAssign 결과: " + CanAssignCard(selectCard, 1));
         if(selectCard==null) return;
         if(CanAssignCard(selectCard,1)==false) return;
+        if(slotCard2 == selectCard){
+            // 슬롯2에 이미 배정되어 있으면 2에서 빼고 1에 배치
+            slotCard2 = null;
+        }
         if(slotCard1 != null)
         {
             handController.ReturnCard(slotCard1); // 슬롯에 이미 카드 있으면 교환
@@ -45,6 +49,9 @@ public class CardSlotController : MonoBehaviour
         Debug.Log("CanAssign 결과: " + CanAssignCard(selectCard, 2));
         if(selectCard==null) return;
         if(CanAssignCard(selectCard,2)==false) return;
+        if(slotCard1 == selectCard){
+            slotCard1 = null;
+        }
         if(slotCard2 != null)
         {
             handController.ReturnCard(slotCard2); // 슬롯에 이미 카드 있으면 교환
