@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CardSlotController : MonoBehaviour
 {
@@ -8,6 +8,10 @@ public class CardSlotController : MonoBehaviour
     public CardData selectCard;
     public CardData slotCard1;
     public CardData slotCard2;
+    [Header("슬롯 이미지")]
+    public Sprite SlotEmpty;
+    public SpriteRenderer Slot1;
+    public SpriteRenderer Slot2;
     public void OnPageStart()
     {
         // 새 라운드 시작하면 슬롯 초기화
@@ -17,6 +21,7 @@ public class CardSlotController : MonoBehaviour
         
         handController.RefillHand(); // 카드 리필
         handUIDirector.RefreshCardHighlite();
+        RefreshSlotIcon();
     }
     public void OncardClicked(CardData card)
     {
@@ -42,6 +47,7 @@ public class CardSlotController : MonoBehaviour
         slotCard1 = selectCard;
         selectCard = null;
         handUIDirector.RefreshCardHighlite();
+        RefreshSlotIcon();
     }
     public void Onchar2Click()
     {
@@ -61,6 +67,7 @@ public class CardSlotController : MonoBehaviour
         slotCard2 = selectCard;
         selectCard = null;
         handUIDirector.RefreshCardHighlite();
+        RefreshSlotIcon();
     }
     public void ConfirmCard()
     {
@@ -75,5 +82,24 @@ public class CardSlotController : MonoBehaviour
         if(card.cardOwner==CardOwner.Char1&&charIndex==1) return true;
         if(card.cardOwner==CardOwner.Char2&&charIndex==2) return true;       
         return false;
+    }
+    public void RefreshSlotIcon()
+    {
+        if(slotCard1 != null)
+        {
+            Slot1.sprite = slotCard1.cardIcon;
+        }
+        else
+        {
+            Slot1.sprite = SlotEmpty;
+        }
+        if(slotCard2 != null)
+        {
+            Slot2.sprite = slotCard2.cardIcon;
+        }
+        else
+        {
+            Slot2.sprite = SlotEmpty;
+        }
     }
 }

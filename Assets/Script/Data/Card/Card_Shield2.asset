@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   sortIndex: 21
   cardName: "\uBC29\uD328"
-  cardIcon: {fileID: -229256013063241344, guid: 81b0c6f573909a34292ab76f82b1dea6, type: 3}
+  cardIcon: {fileID: 5876307218496455166, guid: 80ed452eb34cec743ad8d0ffaa0c9e1f, type: 3}
   cardType: 1
   cardOwner: 2
   description: "\uBC29\uD328\u3150\u3150\u3150"
