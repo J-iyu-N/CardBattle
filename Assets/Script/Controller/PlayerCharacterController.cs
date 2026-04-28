@@ -5,6 +5,7 @@ public class PlayerCharacterController : MonoBehaviour
     public CharacterData Data;
     public RuntimeCharacterState State;
     public CardSlotController cardSlotController;
+    public HpUIController hpUIController;
     public int shield;
     public int characterIndex;
     void Awake()
@@ -52,10 +53,12 @@ public class PlayerCharacterController : MonoBehaviour
         {
             State.ApplyDamage(damage);
         }
+        hpUIController.RefreshHP();
     }
     public void Heal(int amount)
     {
         State.ApplyHeal(amount); // 회복
+        hpUIController.RefreshHP();
     }
     public void OnPageEnd()
     {
