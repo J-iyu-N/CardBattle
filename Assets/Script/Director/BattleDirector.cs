@@ -15,20 +15,6 @@ public class BattleDirector : MonoBehaviour
         char2.State = new RuntimeCharacterState(char2.Data);
         StartPage();
     }
-    void Update()
-{
-    if (Input.GetKeyDown(KeyCode.Space))
-    {
-        if (cardSlot.handController.Hand.Count >= 2)
-        {
-            //cardSlot.slotCard1 = cardSlot.handController.Hand[0];
-            //cardSlot.slotCard2 = cardSlot.handController.Hand[1];
-            //Debug.Log($"슬롯1: {cardSlot.slotCard1.cardName}");
-            //Debug.Log($"슬롯2: {cardSlot.slotCard2.cardName}");
-        }
-        OncConfrimButton();
-    }
-}
     public void StartPage()
     {
         // 페이즈 시작 
