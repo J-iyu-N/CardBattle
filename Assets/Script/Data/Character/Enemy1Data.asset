@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy1Data
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: "\uBCF4\uC2A4"
-  maxHP: 20
+  maxHP: 40
   actionPool:
   - actionName: "\uAC15\uACF5\uACA9"
     actionType: 0
