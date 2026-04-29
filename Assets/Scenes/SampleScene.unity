@@ -645,6 +645,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterController
   Data: {fileID: 11400000, guid: 08792e285b10d3d46ace37e81583d772, type: 2}
+  cardEffect:
+    effectType: 0
+    rangeMin: 0
+    rangeMax: 0
+    percent: 0
   cardSlotController: {fileID: 1426960305}
   hpUIController: {fileID: 1717958875}
   shield: 0
@@ -938,6 +943,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterController
   Data: {fileID: 11400000, guid: 8ffd7de2e8c31f843abd3646a24dae6e, type: 2}
+  cardEffect:
+    effectType: 0
+    rangeMin: 0
+    rangeMax: 0
+    percent: 0
   cardSlotController: {fileID: 1426960305}
   hpUIController: {fileID: 1241767466}
   shield: 0
@@ -1451,6 +1461,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df095b454353241488669b55e4da076c, type: 2}
   - {fileID: 11400000, guid: 21bbc9460acd9fc498e24a7bac2e0037, type: 2}
   - {fileID: 11400000, guid: 3cc57886bd1ab694b9a65fee07fbbed2, type: 2}
+  - {fileID: 11400000, guid: ef814aa8e6b3dc544b86716c39b56304, type: 2}
+  - {fileID: 11400000, guid: 760ba2a343d407544a4e75a9f680e32b, type: 2}
   handSize: 6
   Hand: []
 --- !u!4 &1529880279

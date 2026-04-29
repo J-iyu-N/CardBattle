@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
         int value = State.RollValue(); // 카드 랜던값 결정
         if(State.CurrentAction.actionType == EnemyActionType.Attack)
         {
+            Debug.Log("타겟: "+target);
             target.TakeDamage(value); // 타겟에게 공격
         }
     }

@@ -1,13 +1,16 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class PlayerCharacterController : MonoBehaviour
 {
     public CharacterData Data;
     public RuntimeCharacterState State;
+    public CardEffect cardEffect;
     public CardSlotController cardSlotController;
     public HpUIController hpUIController;
     public int shield;
     public int characterIndex;
+    float defendPercent = 1f;
     void Awake()
     {
         State = new RuntimeCharacterState(Data);
@@ -42,12 +45,20 @@ public class PlayerCharacterController : MonoBehaviour
     }
     public void AddShield(int amount)
     {
-        shield = amount; // 실드 값 추가
+        shield += amount; // 실드 값 추가
+    }
+    public void AddDefend(float percent)
+    {
+
+        defendPercent -= percent;
+        Debug.Log("방어 발동, 받는피해율: " +defendPercent);
     }
     public void TakeDamage(int amount)
     {
-        int damage = amount -shield;
-        shield = Mathf.Max(0, shield - amount); // 실드 깎기, 0이하 안되게
+        int afterDefend = (int)(amount*defendPercent);
+        int damage = afterDefend -shield;
+        shield = Mathf.Max(0, shield - afterDefend); // 실드 깎기, 0이하 안되게
+        Debug.Log("전체 피해값: "+amount+", 디펜드 이후: "+ afterDefend);
 
         if (damage > 0)
         {
@@ -63,6 +74,7 @@ public class PlayerCharacterController : MonoBehaviour
     public void OnPageEnd()
     {
         shield = 0; // 라운드 끝나면 실드 초기화
+        defendPercent = 1;
     }
     public bool IsDead()
     {
