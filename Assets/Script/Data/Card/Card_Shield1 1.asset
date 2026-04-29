@@ -19,7 +19,7 @@ MonoBehaviour:
   cardOwner: 2
   description: "\uBC29\uC5B4\uBC29\uC5B4"
   effects:
-  - effectType: 0
+  - effectType: 1
     rangeMin: 5
     rangeMax: 5
     percent: 0

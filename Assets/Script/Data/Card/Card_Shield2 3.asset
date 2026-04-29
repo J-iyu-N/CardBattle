@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d6dc7e7b4d1a5042acb240c0c51e3a5, type: 3}
-  m_Name: Card_Shield1
+  m_Name: Card_Shield2 3
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  sortIndex: 20
-  cardName: "\uBC29\uC5B4\uB9C9"
-  cardIcon: {fileID: -3885610455112514396, guid: 81b0c6f573909a34292ab76f82b1dea6, type: 3}
+  sortIndex: 21
+  cardName: "\uBC29\uD328"
+  cardIcon: {fileID: -229256013063241344, guid: 81b0c6f573909a34292ab76f82b1dea6, type: 3}
   cardType: 1
-  cardOwner: 2
-  description: "\uBC29\uC5B4\uBC29\uC5B4"
+  cardOwner: 0
+  description: "\uBC29\uD328\u3150\u3150\u3150 0.3"
   effects:
-  - effectType: 1
-    rangeMin: 5
-    rangeMax: 5
-    percent: 0
+  - effectType: 2
+    rangeMin: 0
+    rangeMax: 0
+    percent: 0.3

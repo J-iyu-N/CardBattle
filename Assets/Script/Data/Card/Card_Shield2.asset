@@ -16,10 +16,10 @@ MonoBehaviour:
   cardName: "\uBC29\uD328"
   cardIcon: {fileID: -229256013063241344, guid: 81b0c6f573909a34292ab76f82b1dea6, type: 3}
   cardType: 1
-  cardOwner: 2
-  description: "\uBC29\uD328\u3150\u3150\u3150"
+  cardOwner: 0
+  description: "\uBC29\uD328\u3150\u3150\u3150 0.4"
   effects:
   - effectType: 2
-    rangeMin: 3
-    rangeMax: 3
-    percent: 0
+    rangeMin: 0
+    rangeMax: 0
+    percent: 0.4

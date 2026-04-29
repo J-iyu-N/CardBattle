@@ -2,8 +2,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using NUnit.Framework;
-using UnityEngine.XR;
 
 // 카드 데이터 매핑
 // 카드 프리팹에 코드 붙이기
@@ -11,6 +9,7 @@ public class CardUIController : MonoBehaviour, IPointerClickHandler, IPointerEnt
 {
     public CardData cardData;
     public HandUIDirector handUIDirector;
+    public CardTransformController cardTransform;
     [Header("카드 프리팹 UI 연결")]
     public Image icon;
     public TextMeshProUGUI cardName;
@@ -59,6 +58,7 @@ public class CardUIController : MonoBehaviour, IPointerClickHandler, IPointerEnt
         CheckSelected();
         UpdateHighlite();
         handUIDirector.RefreshCardHighlite();
+        cardTransform.PlayHoverIn();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -67,6 +67,7 @@ public class CardUIController : MonoBehaviour, IPointerClickHandler, IPointerEnt
         CheckSelected();
         UpdateHighlite();
         handUIDirector.RefreshCardHighlite();
+        cardTransform.PlayHoverIn();
     }
     public void OnPointerExit(PointerEventData eventData)
     {
@@ -76,6 +77,7 @@ public class CardUIController : MonoBehaviour, IPointerClickHandler, IPointerEnt
         CheckSelected();
         UpdateHighlite();
         handUIDirector.RefreshCardHighlite();
+        cardTransform.PlayHoverOut();
     }
     public void CheckSelected()
     {

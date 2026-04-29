@@ -90,12 +90,8 @@ public class BattleDirector : MonoBehaviour
             }
             if( effect.effectType == CardEffectType.Defend)
             {
-                float value = effect.percent;
-                if (char1.IsDead() == false)
-                {
-                    // 방어율 퍼센테이지 감소 로직... (나중에 수정)
-                    // TakeDamage 에서 *(1- percent)만큼 감소 처리 로직 필요
-                }
+                Debug.Log("==========="+effect.percent);
+                target.AddDefend(effect.percent);
             }
         }
     }
