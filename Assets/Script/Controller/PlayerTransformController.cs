@@ -27,6 +27,10 @@ public class PlayerTransformController : MonoBehaviour
         baseScale = this.transform.localScale;
         currentSprite = idle;
     }
+    void Update()
+    {
+        UpdateSprite();
+    }
     public IEnumerator MoveTo(Vector2 startPosition, Vector2 targetPosition, float duration)
     {
         float time = 0;
@@ -54,6 +58,17 @@ public class PlayerTransformController : MonoBehaviour
 
         yield return MoveTo(startPosition,targetPosition,moveDuration*0.5f); // 가고
         yield return MoveTo(targetPosition,startPosition,moveDuration*0.5f); // 돌아옴
+    }
+    public void UpdateSprite()
+    {
+        // 프레임마다 (0.1초) 스프라이트 바꿈
+        frameTimer += Time.deltaTime;
+        if (frameTimer > 0.1f)
+        {
+            frameTimer = 0f;
+            spriteRenderer.sprite = currentSprite[frameIndex];
+            frameIndex = (frameIndex +1)%currentSprite.Length;
+        }
     }
     public void PlayAttack()
     {
