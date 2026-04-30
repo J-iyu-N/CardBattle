@@ -1,4 +1,3 @@
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class PlayerCharacterController : MonoBehaviour
@@ -8,6 +7,7 @@ public class PlayerCharacterController : MonoBehaviour
     public CardEffect cardEffect;
     public CardSlotController cardSlotController;
     public HpUIController hpUIController;
+    public PlayerTransformController transformController;
     public int shield;
     public int characterIndex;
     float defendPercent = 1f;
@@ -49,7 +49,6 @@ public class PlayerCharacterController : MonoBehaviour
     }
     public void AddDefend(float percent)
     {
-
         defendPercent -= percent;
         Debug.Log("방어 발동, 받는피해율: " +defendPercent);
     }

@@ -688,6 +688,7 @@ MonoBehaviour:
   enemy: {fileID: 2053252655}
   cardSlot: {fileID: 1426960305}
   handUIDirector: {fileID: 1748704210}
+  transformController: {fileID: 1427801902}
   battleEnd: 0
 --- !u!4 &457135840
 Transform:
@@ -743,6 +744,7 @@ MonoBehaviour:
     percent: 0
   cardSlotController: {fileID: 1426960305}
   hpUIController: {fileID: 1717958875}
+  transformController: {fileID: 0}
   shield: 0
   characterIndex: 1
 --- !u!212 &485919717
@@ -1041,6 +1043,7 @@ MonoBehaviour:
     percent: 0
   cardSlotController: {fileID: 1426960305}
   hpUIController: {fileID: 1241767466}
+  transformController: {fileID: 0}
   shield: 0
   characterIndex: 2
 --- !u!212 &608096509
@@ -1111,7 +1114,7 @@ Transform:
   m_GameObject: {fileID: 608096507}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: -1.55, z: 0}
+  m_LocalPosition: {x: -3, y: -1.62, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1225,15 +1228,15 @@ RectTransform:
   m_GameObject: {fileID: 1241767464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1448134918}
   m_Father: {fileID: 1925812889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -339, y: -144}
+  m_AnchoredPosition: {x: -309, y: -122}
   m_SizeDelta: {x: 283.65, y: 26.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1241767466
@@ -1487,6 +1490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1427801901}
+  - component: {fileID: 1427801902}
   m_Layer: 0
   m_Name: Char2
   m_TagString: Untagged
@@ -1512,6 +1516,33 @@ Transform:
   - {fileID: 1925812889}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1427801902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427801900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90b6baa28fdd674ca29370c76c32840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTransformController
+  spriteRenderer: {fileID: 608096509}
+  currentSprite: []
+  idle:
+  - {fileID: -1547024021732660285, guid: c3484b6ec8390854bac2142b462831a5, type: 3}
+  atttck:
+  - {fileID: -2972596118501953018, guid: 7c056a86bc51e3e48b5a64eed8819a84, type: 3}
+  - {fileID: 5786689578172857478, guid: 7c056a86bc51e3e48b5a64eed8819a84, type: 3}
+  - {fileID: 7894216609045831092, guid: 7c056a86bc51e3e48b5a64eed8819a84, type: 3}
+  - {fileID: -3397037023835015214, guid: 7c056a86bc51e3e48b5a64eed8819a84, type: 3}
+  hit: []
+  defend: []
+  frameIndex: 0
+  frameTimer: 0
+  moveDistance: 1
+  moveDuration: 0.3
 --- !u!1 &1448134917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,7 +1932,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!1 &1717958873
 GameObject:
@@ -1931,15 +1962,15 @@ RectTransform:
   m_GameObject: {fileID: 1717958873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2012588105}
   m_Father: {fileID: 1716043818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -667, y: -144}
+  m_AnchoredPosition: {x: -652, y: -122}
   m_SizeDelta: {x: 283.65, y: 26.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717958875
@@ -2145,7 +2176,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!1 &1991528003
 GameObject:
@@ -2201,7 +2232,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: -75
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -2683,7 +2714,7 @@ Transform:
   m_GameObject: {fileID: 2053252654}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.21, y: 0.24, z: 0}
+  m_LocalPosition: {x: 3.21, y: 0.13, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []

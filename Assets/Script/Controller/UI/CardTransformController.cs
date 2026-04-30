@@ -13,17 +13,17 @@ public class CardTransformController : MonoBehaviour
 
     // 최종 호버 상태
     private Vector2 hoverPositonOffset = new Vector2(0,15f);
-    private Vector3 hoverScale = new Vector3(1.5f,1.5f,1f);
+    public Vector3 hoverScale = new Vector3(1.5f,1.5f,1f);
     private float hoverRotationZ = -10f;
 
     // 호버 올라갈때 중간 디용 효과
     private Vector2 bouncePositionOffset = new Vector2(0,2f);
-    private Vector3 bounceScale = new Vector3(1.2f,1.1f,1f);
+    public Vector3 bounceScale = new Vector3(1.2f,1.1f,1f);
     private float bounceRotationZ = -15f;
 
     // 호버 내려갈때
     private Vector2 outBouncePositionOffset = new Vector2 (0,-5f);
-    private Vector3 outBounceScale = new Vector3(0.95f,0.95f,1f);
+    public Vector3 outBounceScale = new Vector3(0.95f,0.95f,1f);
     private float outBounceRotationZ = -20f;
 
     // 레이어
@@ -33,6 +33,7 @@ public class CardTransformController : MonoBehaviour
 
     void Awake()
     {
+        CardCanvas.sortingOrder = 0;
         basePosition = this.rectTransform.anchoredPosition;
         baseScale = this.rectTransform.localScale;
         baseRotationZ = this.rectTransform.localEulerAngles.z;
@@ -51,7 +52,7 @@ public class CardTransformController : MonoBehaviour
             time += Time.deltaTime;
 
             float t = time/duration;
-            t = Mathf.SmoothStep(0f,1f,t);
+            t = Mathf.SmoothStep(0f,1f,t); // 보간
 
             this.rectTransform.anchoredPosition = Vector2.Lerp(startPosition,targetPosition,t);
             this.rectTransform.localScale = Vector3.Lerp(startScale,targetScale,t);

@@ -7,6 +7,7 @@ public class BattleDirector : MonoBehaviour
     public EnemyController enemy;
     public CardSlotController cardSlot;
     public HandUIDirector handUIDirector;
+    public PlayerTransformController transformController;
 
     public bool battleEnd;
     public void Start()
@@ -106,6 +107,7 @@ public class BattleDirector : MonoBehaviour
             {
                 int value = Random.Range(effect.rangeMin,effect.rangeMax+1);
                 enemy.TakeDamage(value);
+                transformController.PlayAttack();
             }
             if( effect.effectType == CardEffectType.Heal)
             {
