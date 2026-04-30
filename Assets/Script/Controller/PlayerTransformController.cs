@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerTransformController : MonoBehaviour
@@ -16,8 +17,8 @@ public class PlayerTransformController : MonoBehaviour
     public float frameTimer = 0;
 
     [Header("이동 수치")]
-    public float moveDistance = 1f;
-    public float moveDuration = 0.3f;
+    public float moveDistance = 1.5f;
+    public float moveDuration = 0.5f;
 
     private Coroutine moveRoutine;
 
@@ -58,6 +59,11 @@ public class PlayerTransformController : MonoBehaviour
 
         yield return MoveTo(startPosition,targetPosition,moveDuration*0.5f); // 가고
         yield return MoveTo(targetPosition,startPosition,moveDuration*0.5f); // 돌아옴
+
+        //복귀
+        currentSprite = idle;
+        frameIndex =0;
+        moveRoutine = null;
     }
     public void UpdateSprite()
     {
@@ -82,5 +88,7 @@ public class PlayerTransformController : MonoBehaviour
             StopCoroutine(moveRoutine);
             moveRoutine = null;
         }
+        this.transform.position = basePosition;
+        this.transform.localScale = baseScale;
     }
 }

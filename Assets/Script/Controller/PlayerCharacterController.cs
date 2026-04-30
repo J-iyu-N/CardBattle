@@ -7,7 +7,6 @@ public class PlayerCharacterController : MonoBehaviour
     public CardEffect cardEffect;
     public CardSlotController cardSlotController;
     public HpUIController hpUIController;
-    public PlayerTransformController transformController;
     public int shield;
     public int characterIndex;
     float defendPercent = 1f;
