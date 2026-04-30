@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class BattleDirector : MonoBehaviour
 {
     public PlayerCharacterController char1;
@@ -32,16 +32,16 @@ public class BattleDirector : MonoBehaviour
     {
         // 카드 확정 버튼 누름 (클릭 이벤트 받기용)
         if(battleEnd==true) return;
-        ResolvePage();
+        StartCoroutine(ResolvePage());
     }
-    public void ResolvePage()
+    public IEnumerator ResolvePage()
     {
         // 전투 진행 
         // 방어 -> 공격 -> (적) -> 승패체크 -> 다음페이즈/전투종료
         if (enemy.State.CurrentAction == null)
         {
             Debug.Log("적 행동 없음");
-            return;
+            yield break;
         }
 
         // 방어 처리
@@ -51,14 +51,17 @@ public class BattleDirector : MonoBehaviour
         {
             // EnemyController의 RuntimeEnemyState의 최근 동작의 타입이 실드일때
             enemy.ApplyShield();
-            if(CheckBattleResult()==true) return;
+            if(CheckBattleResult()==true) yield break;
         }
 
         // 캐릭터 1,2 행동 처리
-        ApplyAtackAndHeal(char1,cardSlot.slotCard1);
-        if(CheckBattleResult()==true) return;
-        ApplyAtackAndHeal(char2,cardSlot.slotCard2);
-        if(CheckBattleResult()==true) return;
+        ApplyAtackAndHeal(char1,cardSlot.slotCard1,char1Transform);
+        yield return new WaitForSeconds(0.8f);
+        if(CheckBattleResult()==true) yield break;
+
+        ApplyAtackAndHeal(char2,cardSlot.slotCard2,char2Transform);
+        yield return new WaitForSeconds(0.8f);
+        if(CheckBattleResult()==true) yield break;
 
         // 적 행동 처리
         if(enemy.State.CurrentAction.actionType != EnemyActionType.Shield)
@@ -72,7 +75,7 @@ public class BattleDirector : MonoBehaviour
                 enemy.ExcuteAction(char2);
             }
         }
-        if(CheckBattleResult()==true) return;
+        if(CheckBattleResult()==true) yield break;
 
         cardSlot.ConfirmCard();
         EndPage();
@@ -97,7 +100,7 @@ public class BattleDirector : MonoBehaviour
             }
         }
     }
-    public void ApplyAtackAndHeal(PlayerCharacterController target, CardData card)
+    public void ApplyAtackAndHeal(PlayerCharacterController target, CardData card, PlayerTransformController playerTransform)
     {
         // 공격&힐 적용 메서드
         if(card == null) return;
@@ -108,8 +111,7 @@ public class BattleDirector : MonoBehaviour
             {
                 int value = Random.Range(effect.rangeMin,effect.rangeMax+1);
                 enemy.TakeDamage(value);
-                char1Transform.PlayAttack();
-                char2Transform.PlayAttack();
+                playerTransform.PlayAttack();
             }
             if( effect.effectType == CardEffectType.Heal)
             {

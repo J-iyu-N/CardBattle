@@ -1087,7 +1087,7 @@ MonoBehaviour:
   frameIndex: 0
   frameTimer: 0
   moveDistance: 7
-  moveDuration: 0.8
+  moveDuration: 0.6
 --- !u!1 &1241767464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,7 +1428,7 @@ MonoBehaviour:
   frameIndex: 0
   frameTimer: 0
   moveDistance: 1
-  moveDuration: 0.3
+  moveDuration: 0.4
 --- !u!1 &1448134917
 GameObject:
   m_ObjectHideFlags: 0
