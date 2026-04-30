@@ -26,20 +26,23 @@ public class CardTransformController : MonoBehaviour
     private Vector3 outBounceScale = new Vector3(0.95f,0.95f,1f);
     private float outBounceRotationZ = -20f;
 
+    // 레이어
+    public Canvas CardCanvas;
+
     private Coroutine moveRoutine;
 
     void Awake()
     {
-        basePosition = rectTransform.anchoredPosition;
-        baseScale = rectTransform.localScale;
-        baseRotationZ = rectTransform.localEulerAngles.z;
+        basePosition = this.rectTransform.anchoredPosition;
+        baseScale = this.rectTransform.localScale;
+        baseRotationZ = this.rectTransform.localEulerAngles.z;
     }
     public IEnumerator Animate(Vector2 targetPosition, Vector3 targetScale, float targetRotationZ, float duration)
     {
         // 애니메이션 시작 전 위치
-        Vector2 startPosition = rectTransform.anchoredPosition;
-        Vector3 startScale = rectTransform.localScale;
-        float startRotationZ = rectTransform.localEulerAngles.z;
+        Vector2 startPosition = this.rectTransform.anchoredPosition;
+        Vector3 startScale = this.rectTransform.localScale;
+        float startRotationZ = this.rectTransform.localEulerAngles.z;
 
         float time = 0;
 
@@ -85,11 +88,13 @@ public class CardTransformController : MonoBehaviour
     }
     public void PlayHoverIn()
     {
+        CardCanvas.sortingOrder = 100;
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(PlayHoverRoutine());
     }
     public void PlayHoverOut()
     {
+        CardCanvas.sortingOrder = 0;
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(PalyOutHoverRoutine());
     }
