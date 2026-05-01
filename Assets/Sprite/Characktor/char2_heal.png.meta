@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: 9d1cb1b4b9d068748b1a7c32f56f2c1a
+guid: 1145846543a9231428a2ad31ee0a10a0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4116044808928300203
-    second: char1_damaged_0
+      213: -8528278763903046002
+    second: char2_heal_0
   - first:
-      213: 467469093770424660
-    second: char1_damaged_1
+      213: -5866003331988786932
+    second: char2_heal_1
   - first:
-      213: -5098504317855716096
-    second: char1_damaged_2
+      213: -5440130975172897003
+    second: char2_heal_2
   - first:
-      213: -432407305366739910
-    second: char1_damaged_3
+      213: 1203021066475098705
+    second: char2_heal_3
+  - first:
+      213: -7117786483597132257
+    second: char2_heal_4
+  - first:
+      213: -3251495987298857396
+    second: char2_heal_5
+  - first:
+      213: -6650164737902378355
+    second: char2_heal_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,89 +118,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char1_damaged_0
+      name: char2_heal_0
       rect:
         serializedVersion: 2
-        x: 324
-        y: 226
-        width: 234
-        height: 397
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 81
+        y: 209
+        width: 279
+        height: 431
+      alignment: 9
+      pivot: {x: 0.48, y: 0.52}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 553fc34dd0fd0e6c0800000000000000
-      internalID: -4116044808928300203
+      spriteID: e8e2d0426a775a980800000000000000
+      internalID: -8528278763903046002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char1_damaged_1
+      name: char2_heal_1
       rect:
         serializedVersion: 2
-        x: 654
-        y: 227
-        width: 254
-        height: 386
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 492
+        y: 204
+        width: 297
+        height: 436
+      alignment: 9
+      pivot: {x: 0.48, y: 0.52}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 451f8adf9a8cc7600800000000000000
-      internalID: 467469093770424660
+      spriteID: c01fc898c05c79ea0800000000000000
+      internalID: -5866003331988786932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char1_damaged_2
+      name: char2_heal_3
       rect:
         serializedVersion: 2
-        x: 994
-        y: 228
-        width: 248
-        height: 323
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 934
+        y: 204
+        width: 301
+        height: 434
+      alignment: 9
+      pivot: {x: 0.48, y: 0.52}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00d2a6006597e39b0800000000000000
-      internalID: -5098504317855716096
+      spriteID: 1525f8c394df1b010800000000000000
+      internalID: 1203021066475098705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char1_damaged_3
+      name: char2_heal_4
       rect:
         serializedVersion: 2
-        x: 1344
-        y: 227
-        width: 219
-        height: 372
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1341
+        y: 202
+        width: 324
+        height: 436
+      alignment: 9
+      pivot: {x: 0.48, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a34e455c8d7cff9f0800000000000000
-      internalID: -432407305366739910
+      spriteID: f1ebd12a7ea883d90800000000000000
+      internalID: -7117786483597132257
       vertices: []
       indices: 
       edges: []
@@ -200,7 +209,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 30489b53511a3574ea9d130299f7c101
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +219,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      char1_damaged_0: -4116044808928300203
-      char1_damaged_1: 467469093770424660
-      char1_damaged_2: -5098504317855716096
-      char1_damaged_3: -432407305366739910
+      char2_heal_0: -8528278763903046002
+      char2_heal_1: -5866003331988786932
+      char2_heal_2: -5440130975172897003
+      char2_heal_3: 1203021066475098705
+      char2_heal_4: -7117786483597132257
+      char2_heal_5: -3251495987298857396
+      char2_heal_6: -6650164737902378355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

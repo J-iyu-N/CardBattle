@@ -13,6 +13,8 @@ public class PlayerTransformController : MonoBehaviour
     public Sprite[] idle;
     public Sprite[] atttck;
     public Sprite[] damaged;
+    public Sprite[] heal;
+    public Sprite[] healOther;
     public int frameIndex =0;
     public float frameTimer = 0;
 
@@ -60,10 +62,7 @@ public class PlayerTransformController : MonoBehaviour
         yield return MoveTo(startPosition,targetPosition,moveDuration*0.5f); // 가고
         yield return MoveTo(targetPosition,startPosition,moveDuration*0.5f); // 돌아옴
 
-        //복귀
-        currentSprite = idle;
-        frameIndex =0;
-        moveRoutine = null;
+        SetIdle();
     }
     public IEnumerator DamagedRoutine()
     {
@@ -72,10 +71,26 @@ public class PlayerTransformController : MonoBehaviour
         frameTimer = 0f;
         yield return new WaitForSeconds(0.5f);
 
-        //복귀
-        currentSprite = idle;
-        frameIndex =0;
-        moveRoutine = null;
+        SetIdle();
+    }
+    public IEnumerator HealRoutine()
+    {
+        currentSprite = heal;
+        frameIndex = 0;
+        frameTimer = 0f;
+        yield return new WaitForSeconds(0.5f);
+
+        SetIdle();
+
+    }
+    public IEnumerator HealOtherRoutine()
+    {
+        currentSprite = healOther;
+        frameIndex = 0;
+        frameTimer = 0f;
+        yield return new WaitForSeconds(0.5f);
+
+        SetIdle();
     }
     public void UpdateSprite()
     {
@@ -97,6 +112,23 @@ public class PlayerTransformController : MonoBehaviour
     {
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(DamagedRoutine());
+    }
+    public void PlayHeal()
+    {
+        StopCurrentCorutine();
+        moveRoutine = StartCoroutine(HealRoutine());
+    }
+    public void PlayHealOther()
+    {
+        StopCurrentCorutine();
+        moveRoutine = StartCoroutine(HealOtherRoutine());
+    }
+    public void SetIdle()
+    {
+        //복귀
+        currentSprite = idle;
+        frameIndex =0;
+        moveRoutine = null;
     }
     private void StopCurrentCorutine()
     {

@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 9d1cb1b4b9d068748b1a7c32f56f2c1a
+guid: 6009af2b80fc0e64a93f0dc0b5888d32
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4116044808928300203
-    second: char1_damaged_0
+      213: 5450193234166332633
+    second: char1_heal_0
   - first:
-      213: 467469093770424660
-    second: char1_damaged_1
+      213: 7079606082028285454
+    second: char1_heal_1
   - first:
-      213: -5098504317855716096
-    second: char1_damaged_2
+      213: 4703485915623352857
+    second: char1_heal_2
   - first:
-      213: -432407305366739910
-    second: char1_damaged_3
+      213: 3266957803872210135
+    second: char1_heal_3
+  - first:
+      213: -580939264428289277
+    second: char1_heal_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char1_damaged_0
+      name: char1_heal_0
       rect:
         serializedVersion: 2
-        x: 324
-        y: 226
-        width: 234
-        height: 397
+        x: 296
+        y: 230
+        width: 221
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 553fc34dd0fd0e6c0800000000000000
-      internalID: -4116044808928300203
+      spriteID: 9dcb8bfbed9f2ab40800000000000000
+      internalID: 5450193234166332633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char1_damaged_1
+      name: char1_heal_1
       rect:
         serializedVersion: 2
-        x: 654
-        y: 227
-        width: 254
-        height: 386
+        x: 650
+        y: 230
+        width: 218
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 451f8adf9a8cc7600800000000000000
-      internalID: 467469093770424660
+      spriteID: e0eadf4e830df3260800000000000000
+      internalID: 7079606082028285454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char1_damaged_2
+      name: char1_heal_2
       rect:
         serializedVersion: 2
-        x: 994
-        y: 228
-        width: 248
-        height: 323
+        x: 966
+        y: 424
+        width: 7
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00d2a6006597e39b0800000000000000
-      internalID: -5098504317855716096
+      spriteID: 91a68c62583264140800000000000000
+      internalID: 4703485915623352857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char1_damaged_3
+      name: char1_heal_3
       rect:
         serializedVersion: 2
-        x: 1344
-        y: 227
-        width: 219
-        height: 372
+        x: 968
+        y: 230
+        width: 250
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +193,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a34e455c8d7cff9f0800000000000000
-      internalID: -432407305366739910
+      spriteID: 7dc4ef340d0965d20800000000000000
+      internalID: 3266957803872210135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char1_heal_4
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 230
+        width: 221
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 303dca321d610f7f0800000000000000
+      internalID: -580939264428289277
       vertices: []
       indices: 
       edges: []
@@ -210,10 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      char1_damaged_0: -4116044808928300203
-      char1_damaged_1: 467469093770424660
-      char1_damaged_2: -5098504317855716096
-      char1_damaged_3: -432407305366739910
+      char1_heal_0: 5450193234166332633
+      char1_heal_1: 7079606082028285454
+      char1_heal_2: 4703485915623352857
+      char1_heal_3: 3266957803872210135
+      char1_heal_4: -580939264428289277
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

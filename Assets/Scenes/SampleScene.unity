@@ -1084,6 +1084,16 @@ MonoBehaviour:
   - {fileID: -92373883675437233, guid: f06214a296871b343b2f21e5d5a6522b, type: 3}
   - {fileID: 2246656384113612859, guid: f06214a296871b343b2f21e5d5a6522b, type: 3}
   - {fileID: -3484865969669701396, guid: f06214a296871b343b2f21e5d5a6522b, type: 3}
+  damaged:
+  - {fileID: -4116044808928300203, guid: 9d1cb1b4b9d068748b1a7c32f56f2c1a, type: 3}
+  - {fileID: -5098504317855716096, guid: 9d1cb1b4b9d068748b1a7c32f56f2c1a, type: 3}
+  - {fileID: -5098504317855716096, guid: 9d1cb1b4b9d068748b1a7c32f56f2c1a, type: 3}
+  - {fileID: -432407305366739910, guid: 9d1cb1b4b9d068748b1a7c32f56f2c1a, type: 3}
+  heal:
+  - {fileID: 5450193234166332633, guid: 386bfa98f8eb07140a7761078323cce3, type: 3}
+  - {fileID: 4703485915623352857, guid: 386bfa98f8eb07140a7761078323cce3, type: 3}
+  - {fileID: -580939264428289277, guid: 386bfa98f8eb07140a7761078323cce3, type: 3}
+  - {fileID: 2589410679220555706, guid: 386bfa98f8eb07140a7761078323cce3, type: 3}
   frameIndex: 0
   frameTimer: 0
   moveDistance: 7
@@ -1425,6 +1435,16 @@ MonoBehaviour:
   - {fileID: 5786689578172857478, guid: 7c056a86bc51e3e48b5a64eed8819a84, type: 3}
   - {fileID: 7894216609045831092, guid: 7c056a86bc51e3e48b5a64eed8819a84, type: 3}
   - {fileID: -3397037023835015214, guid: 7c056a86bc51e3e48b5a64eed8819a84, type: 3}
+  damaged:
+  - {fileID: 814207774295959826, guid: 35ed9b0059a7d3142bbb36be343ed715, type: 3}
+  - {fileID: -5749899512914250723, guid: 35ed9b0059a7d3142bbb36be343ed715, type: 3}
+  - {fileID: -4814777114653440480, guid: 35ed9b0059a7d3142bbb36be343ed715, type: 3}
+  - {fileID: 5973357067147655254, guid: 35ed9b0059a7d3142bbb36be343ed715, type: 3}
+  heal:
+  - {fileID: -8528278763903046002, guid: 1145846543a9231428a2ad31ee0a10a0, type: 3}
+  - {fileID: -5866003331988786932, guid: 1145846543a9231428a2ad31ee0a10a0, type: 3}
+  - {fileID: 1203021066475098705, guid: 1145846543a9231428a2ad31ee0a10a0, type: 3}
+  - {fileID: -7117786483597132257, guid: 1145846543a9231428a2ad31ee0a10a0, type: 3}
   frameIndex: 0
   frameTimer: 0
   moveDistance: 1
@@ -1697,10 +1717,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b41b9e3520aebe34093c293a5c1e4232, type: 2}
   - {fileID: 11400000, guid: 061b0cb765bee8e479ae7f51a910ae03, type: 2}
   - {fileID: 11400000, guid: df095b454353241488669b55e4da076c, type: 2}
-  - {fileID: 11400000, guid: 21bbc9460acd9fc498e24a7bac2e0037, type: 2}
   - {fileID: 11400000, guid: 3cc57886bd1ab694b9a65fee07fbbed2, type: 2}
   - {fileID: 11400000, guid: ef814aa8e6b3dc544b86716c39b56304, type: 2}
-  - {fileID: 11400000, guid: 760ba2a343d407544a4e75a9f680e32b, type: 2}
+  - {fileID: 11400000, guid: 836b252082411414290ac8f0627bf599, type: 2}
+  - {fileID: 11400000, guid: a9b4703c195999b49b9fbcb3c97bcbee, type: 2}
   handSize: 6
   Hand: []
 --- !u!4 &1529880279

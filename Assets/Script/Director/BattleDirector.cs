@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor.Rendering.UITK.ShaderGraph;
 public class BattleDirector : MonoBehaviour
 {
     public PlayerCharacterController char1;
@@ -119,6 +120,11 @@ public class BattleDirector : MonoBehaviour
             {
                 int value = Random.Range(effect.rangeMin,effect.rangeMax+1);
                 target.Heal(value);
+                charTransform.PlayHeal();
+                if(charTransform == char2Transform)
+                {
+                    char1Transform.PlayHealOther();
+                }
             }
         }
     }
