@@ -9,6 +9,7 @@ public class BattleDirector : MonoBehaviour
     public HandUIDirector handUIDirector;
     public PlayerTransformController char1Transform;
     public PlayerTransformController char2Transform;
+    public EnemyUIDirecotr enemyUI;
 
     public bool battleEnd;
     public void Start()
@@ -32,6 +33,7 @@ public class BattleDirector : MonoBehaviour
     {
         // 카드 확정 버튼 누름 (클릭 이벤트 받기용)
         if(battleEnd==true) return;
+        enemyUI.HideTargetLine();
         StartCoroutine(ResolvePage());
     }
     public IEnumerator ResolvePage()

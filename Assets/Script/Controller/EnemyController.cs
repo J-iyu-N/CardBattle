@@ -5,6 +5,7 @@ public class EnemyController : MonoBehaviour
     public EnemyData Data;
     public RuntimeEnemyState State;
     public HpUIEnemyDirector hpUI;
+    public EnemyUIDirecotr enemyUI;
     public int shield;
 
     void Awake()
@@ -14,6 +15,7 @@ public class EnemyController : MonoBehaviour
     public void OnPageStart()
     {
         State.DecideActions(); // 행동 결정
+        enemyUI.RefreshUI(State);
     }
     public void ExcuteAction(PlayerCharacterController target)
     {
