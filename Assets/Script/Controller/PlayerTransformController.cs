@@ -12,6 +12,7 @@ public class PlayerTransformController : MonoBehaviour
     public Sprite[] currentSprite;
     public Sprite[] idle;
     public Sprite[] atttck;
+    public Sprite[] damaged;
     public int frameIndex =0;
     public float frameTimer = 0;
 
@@ -64,6 +65,18 @@ public class PlayerTransformController : MonoBehaviour
         frameIndex =0;
         moveRoutine = null;
     }
+    public IEnumerator DamagedRoutine()
+    {
+        currentSprite = damaged;
+        frameIndex = 0;
+        frameTimer = 0f;
+        yield return new WaitForSeconds(0.5f);
+
+        //복귀
+        currentSprite = idle;
+        frameIndex =0;
+        moveRoutine = null;
+    }
     public void UpdateSprite()
     {
         // 프레임마다 (0.1초) 스프라이트 바꿈
@@ -79,6 +92,11 @@ public class PlayerTransformController : MonoBehaviour
     {
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(AttackRoutine());
+    }
+    public void PlayDamaged()
+    {
+        StopCurrentCorutine();
+        moveRoutine = StartCoroutine(DamagedRoutine());
     }
     private void StopCurrentCorutine()
     {

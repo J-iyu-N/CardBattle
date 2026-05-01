@@ -69,10 +69,12 @@ public class BattleDirector : MonoBehaviour
             if(enemy.State.Target == 0)
             {
                 enemy.ExcuteAction(char1);
+                char1Transform.PlayDamaged(); // 맞는 모션 재생
             }
             else if(enemy.State.Target == 1)
             {
                 enemy.ExcuteAction(char2);
+                char2Transform.PlayDamaged(); // 맞는 모션 재생
             }
         }
         if(CheckBattleResult()==true) yield break;
@@ -100,7 +102,7 @@ public class BattleDirector : MonoBehaviour
             }
         }
     }
-    public void ApplyAtackAndHeal(PlayerCharacterController target, CardData card, PlayerTransformController playerTransform)
+    public void ApplyAtackAndHeal(PlayerCharacterController target, CardData card, PlayerTransformController charTransform)
     {
         // 공격&힐 적용 메서드
         if(card == null) return;
@@ -111,7 +113,7 @@ public class BattleDirector : MonoBehaviour
             {
                 int value = Random.Range(effect.rangeMin,effect.rangeMax+1);
                 enemy.TakeDamage(value);
-                playerTransform.PlayAttack();
+                charTransform.PlayAttack(); // 공격 모션 적용
             }
             if( effect.effectType == CardEffectType.Heal)
             {
