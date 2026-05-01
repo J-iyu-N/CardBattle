@@ -6,7 +6,7 @@ public class PlayerCharacterController : MonoBehaviour
     public RuntimeCharacterState State;
     public CardEffect cardEffect;
     public CardSlotController cardSlotController;
-    public HpUIController hpUI;
+    public HpUIDirector hpUI;
     public int shield;
     public int characterIndex;
     float defendPercent = 1f;
@@ -45,6 +45,7 @@ public class PlayerCharacterController : MonoBehaviour
     public void AddShield(int amount)
     {
         shield += amount; // 실드 값 추가
+        hpUI.RefreshHP();
     }
     public void AddDefend(float percent)
     {
@@ -73,6 +74,7 @@ public class PlayerCharacterController : MonoBehaviour
     {
         shield = 0; // 라운드 끝나면 실드 초기화
         defendPercent = 1;
+        hpUI.RefreshHP();
     }
     public bool IsDead()
     {

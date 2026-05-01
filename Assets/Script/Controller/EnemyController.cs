@@ -4,7 +4,7 @@ public class EnemyController : MonoBehaviour
 {
     public EnemyData Data;
     public RuntimeEnemyState State;
-    public HpUIEnemyController hpUI;
+    public HpUIEnemyDirector hpUI;
     public int shield;
 
     void Awake()
@@ -28,6 +28,7 @@ public class EnemyController : MonoBehaviour
     {
         int value = State.RollValue();
         shield += value;
+        hpUI.RefreshHP();
     }
     public void TakeDamage(int amount)
     {
@@ -44,6 +45,7 @@ public class EnemyController : MonoBehaviour
     public void OnPageEnd() // 라운드 끝나면 실드 초기화
     {
         shield = 0; 
+        hpUI.RefreshHP();
     }
     public bool IsDead()
     {
