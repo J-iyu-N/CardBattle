@@ -6,7 +6,7 @@ public class PlayerCharacterController : MonoBehaviour
     public RuntimeCharacterState State;
     public CardEffect cardEffect;
     public CardSlotController cardSlotController;
-    public HpUIController hpUIController;
+    public HpUIController hpUI;
     public int shield;
     public int characterIndex;
     float defendPercent = 1f;
@@ -62,12 +62,12 @@ public class PlayerCharacterController : MonoBehaviour
         {
             State.ApplyDamage(damage);
         }
-        hpUIController.RefreshHP();
+        hpUI.RefreshHP();
     }
     public void Heal(int amount)
     {
         State.ApplyHeal(amount); // 회복
-        hpUIController.RefreshHP();
+        hpUI.RefreshHP();
     }
     public void OnPageEnd()
     {
