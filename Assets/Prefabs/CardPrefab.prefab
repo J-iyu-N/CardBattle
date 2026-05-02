@@ -269,6 +269,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardTransformController
   rectTransform: {fileID: 5744627873780575297}
+  hoverScale: {x: 1.5, y: 1.5, z: 1}
+  bounceScale: {x: 1.2, y: 1.1, z: 1}
+  outBounceScale: {x: 0.95, y: 0.95, z: 1}
   CardCanvas: {fileID: 1232887872153638594}
 --- !u!1 &3945460278755278909
 GameObject:
@@ -322,10 +325,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardUIController
   cardData: {fileID: 0}
+  cardEffect:
+    effectType: 0
+    rangeMin: 0
+    rangeMax: 0
+    percent: 0
   handUIDirector: {fileID: 0}
   cardTransform: {fileID: 975897873573887575}
   icon: {fileID: 3023422731491881747}
   cardName: {fileID: 5567222546236006069}
+  damage: {fileID: 9005352155975313742}
   desc: {fileID: 6983451141308516195}
   cardSlotController: {fileID: 0}
   highlite: {fileID: 6256521743628868911}
