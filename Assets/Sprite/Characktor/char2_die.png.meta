@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 9d1cb1b4b9d068748b1a7c32f56f2c1a
+guid: 0ec96b18d27a99346b8a88f560ec1fb2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4116044808928300203
-    second: char1_damaged_0
+      213: 7484024455343394729
+    second: char2_die_0
   - first:
-      213: 467469093770424660
-    second: char1_damaged_1
+      213: -970068590874761654
+    second: char2_die_1
   - first:
-      213: -5098504317855716096
-    second: char1_damaged_2
+      213: 2070272295043142236
+    second: char2_die_2
   - first:
-      213: -432407305366739910
-    second: char1_damaged_3
+      213: -3984377558935044564
+    second: char2_die_3
+  - first:
+      213: 1615529738609174212
+    second: char2_die_4
+  - first:
+      213: 879031391057538695
+    second: char2_die_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char1_damaged_0
+      name: char2_die_0
       rect:
         serializedVersion: 2
-        x: 324
-        y: 226
-        width: 234
-        height: 397
+        x: 66
+        y: 299
+        width: 238
+        height: 383
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,64 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 553fc34dd0fd0e6c0800000000000000
-      internalID: -4116044808928300203
+      spriteID: 9af441f07989cd760800000000000000
+      internalID: 7484024455343394729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char1_damaged_1
+      name: char2_die_1
       rect:
         serializedVersion: 2
-        x: 654
-        y: 227
-        width: 254
-        height: 386
-      alignment: 9
-      pivot: {x: 0.50000024, y: 0.5314127}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 451f8adf9a8cc7600800000000000000
-      internalID: 467469093770424660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char1_damaged_2
-      rect:
-        serializedVersion: 2
-        x: 994
-        y: 228
-        width: 248
-        height: 323
-      alignment: 9
-      pivot: {x: 0.4902216, y: 0.5675715}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 00d2a6006597e39b0800000000000000
-      internalID: -5098504317855716096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char1_damaged_3
-      rect:
-        serializedVersion: 2
-        x: 1344
-        y: 227
-        width: 219
-        height: 372
+        x: 456
+        y: 297
+        width: 264
+        height: 362
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +152,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a34e455c8d7cff9f0800000000000000
-      internalID: -432407305366739910
+      spriteID: a46652991cf9982f0800000000000000
+      internalID: -970068590874761654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char2_die_2
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 289
+        width: 295
+        height: 267
+      alignment: 9
+      pivot: {x: 0.50000083, y: 0.7253196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c52116efea51bbc10800000000000000
+      internalID: 2070272295043142236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char2_die_4
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 282
+        width: 350
+        height: 156
+      alignment: 9
+      pivot: {x: 0.49386194, y: 1.2575126}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c621e1ecb38b6610800000000000000
+      internalID: 1615529738609174212
       vertices: []
       indices: 
       edges: []
@@ -200,7 +206,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f04140628903816418b1076f141b3798
+    spriteID: a310e2af0c243c8499a7182b4be01890
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +216,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      char1_damaged_0: -4116044808928300203
-      char1_damaged_1: 467469093770424660
-      char1_damaged_2: -5098504317855716096
-      char1_damaged_3: -432407305366739910
+      char2_die_0: 7484024455343394729
+      char2_die_1: -970068590874761654
+      char2_die_2: 2070272295043142236
+      char2_die_3: -3984377558935044564
+      char2_die_4: 1615529738609174212
+      char2_die_5: 879031391057538695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

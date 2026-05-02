@@ -6,7 +6,7 @@ public class PlayerTransformController : MonoBehaviour
     // 플레이어 애니메이션
     private Vector2 basePosition;
     private Vector3 baseScale;
-
+    public bool isDead;
     public SpriteRenderer spriteRenderer;
     [Header("스프라이트")]
     public Sprite[] currentSprite;
@@ -16,6 +16,7 @@ public class PlayerTransformController : MonoBehaviour
     public Sprite[] damaged;
     public Sprite[] heal;
     public Sprite[] healOther;
+    public Sprite[] dead;
     public int frameIndex =0;
     public float frameTimer = 0;
 
@@ -33,6 +34,7 @@ public class PlayerTransformController : MonoBehaviour
     }
     void Update()
     {
+        if (isDead == true) return;
         UpdateSprite();
     }
     public IEnumerator MoveTo(Vector2 startPosition, Vector2 targetPosition, float duration)
@@ -108,6 +110,13 @@ public class PlayerTransformController : MonoBehaviour
 
         SetIdle();
     }
+    public IEnumerator DeadRoutine()
+    {
+        currentSprite = dead;
+        frameIndex = 0;
+        frameTimer = 0f;
+        yield return new WaitForSeconds(0.5f);
+    }
     public void UpdateSprite()
     {
         // 프레임마다 (0.1초) 스프라이트 바꿈
@@ -121,28 +130,41 @@ public class PlayerTransformController : MonoBehaviour
     }
     public void PlayAttack()
     {
+        if (isDead == true) return;
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(AttackRoutine());
     }
     public void PlayAttackGun()
     {
+        if (isDead == true) return;
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(AttackGunRoutine());
     }
     public void PlayDamaged()
     {
+        if (isDead == true) return;
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(DamagedRoutine());
     }
     public void PlayHeal()
     {
+        if (isDead == true) return;
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(HealRoutine());
     }
     public void PlayHealOther()
     {
+        if (isDead == true) return;
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(HealOtherRoutine());
+    }
+    public void PlayDead()
+    {
+        if (isDead == true) return;
+        isDead = true;
+        StopCurrentCorutine();
+        moveRoutine = StartCoroutine(DeadRoutine());
+        spriteRenderer.sprite = dead[3];
     }
     public void SetIdle()
     {

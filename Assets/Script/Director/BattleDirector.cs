@@ -36,9 +36,11 @@ public class BattleDirector : MonoBehaviour
         enemyUI.HideTargetLine();
         StartCoroutine(ResolvePage());
     }
-
-    // 전투 진행 
+    /// <summary>
+    /// 전투 진행 
     // 방어 -> 공격 -> (적) -> 승패체크 -> 다음페이즈/전투종료
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator ResolvePage()
     {
         if (enemy.State.CurrentAction == null)
@@ -64,7 +66,7 @@ public class BattleDirector : MonoBehaviour
         if(CheckBattleResult()==true) yield break;
 
         StartCoroutine(ApplyAtackAndHeal(char2,cardSlot.slotCard2,char2Transform));
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
         if(CheckBattleResult()==true) yield break;
 
         // 적 행동 처리
@@ -90,6 +92,11 @@ public class BattleDirector : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         StartPage();
     }
+    /// <summary>
+    /// 방어 계열 카드 적용
+    /// </summary>
+    /// <param name="target"></param>
+    /// <param name="card"></param>
     public void ApplyShield(PlayerCharacterController target, CardData card)
     {
         // 방어 적용 메서드
@@ -108,6 +115,13 @@ public class BattleDirector : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// 전투 & 힐 계열 카드 적용
+    /// </summary>
+    /// <param name="target"></param>
+    /// <param name="card"></param>
+    /// <param name="charTransform"></param>
+    /// <returns></returns>
     public IEnumerator ApplyAtackAndHeal(PlayerCharacterController target, CardData card, PlayerTransformController charTransform)
     {
         // 공격&힐 적용 메서드
@@ -144,11 +158,22 @@ public class BattleDirector : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// 전투 결과 체크
+    /// </summary>
+    /// <returns></returns>
     public bool CheckBattleResult()
     {
-        if (char2.IsDead() == true) Debug.Log("캐릭터 2 죽음");
-        if (char1.IsDead() == true) Debug.Log("캐릭터 1 죽음");
-
+        if (char2.IsDead() == true) 
+        {
+            char2Transform.PlayDead();
+            Debug.Log("캐릭터 2 죽음");
+        }
+        if (char1.IsDead() == true) 
+        {
+            char1Transform.PlayDead();
+            Debug.Log("캐릭터 1 죽음");
+        }
         // 결과 판단 메서드
         if (enemy.IsDead() == true)
         {
