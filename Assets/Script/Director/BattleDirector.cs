@@ -56,14 +56,15 @@ public class BattleDirector : MonoBehaviour
             enemy.ApplyShield();
             if(CheckBattleResult()==true) yield break;
         }
+        yield return new WaitForSeconds(0.1f);
 
         // 캐릭터 1,2 행동 처리
         ApplyAtackAndHeal(char1,cardSlot.slotCard1,char1Transform);
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.6f);
         if(CheckBattleResult()==true) yield break;
 
         ApplyAtackAndHeal(char2,cardSlot.slotCard2,char2Transform);
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.6f);
         if(CheckBattleResult()==true) yield break;
 
         // 적 행동 처리
@@ -80,11 +81,13 @@ public class BattleDirector : MonoBehaviour
                 char2Transform.PlayDamaged(); // 맞는 모션 재생
             }
         }
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.2f);
         if(CheckBattleResult()==true) yield break;
 
         cardSlot.ConfirmCard();
+        yield return new WaitForSeconds(0.1f);
         EndPage();
+        yield return new WaitForSeconds(0.1f);
         StartPage();
     }
     public void ApplyShield(PlayerCharacterController target, CardData card)
