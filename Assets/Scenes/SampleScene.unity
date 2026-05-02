@@ -1899,6 +1899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90b6baa28fdd674ca29370c76c32840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTransformController
+  isDead: 0
   spriteRenderer: {fileID: 485919717}
   currentSprite: []
   idle:
@@ -2293,8 +2294,8 @@ MonoBehaviour:
   slotCard1: {fileID: 0}
   slotCard2: {fileID: 0}
   SlotEmpty: {fileID: 7307552838652339835, guid: 80ed452eb34cec743ad8d0ffaa0c9e1f, type: 3}
-  Slot1: {fileID: 1517115460}
-  Slot2: {fileID: 426498146}
+  Slot1: {fileID: 1517115459}
+  Slot2: {fileID: 426498145}
 --- !u!4 &1426960306
 Transform:
   m_ObjectHideFlags: 0
@@ -2357,6 +2358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90b6baa28fdd674ca29370c76c32840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTransformController
+  isDead: 0
   spriteRenderer: {fileID: 608096509}
   currentSprite: []
   idle:

@@ -23,6 +23,7 @@ public class PlayerCharacterController : MonoBehaviour
     public void CharacterClick()
     {
         if(cardSlotController.selectCard == null) return;
+        if(IsDead()==true) return; // 죽으면 선택 안되게
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -58,7 +59,6 @@ public class PlayerCharacterController : MonoBehaviour
         int afterDefend = (int)(amount*defendPercent);
         int damage = afterDefend -shield;
         shield = Mathf.Max(0, shield - afterDefend); // 실드 깎기, 0이하 안되게
-        Debug.Log("전체 피해값: "+amount+", 디펜드 이후: "+ afterDefend);
 
         if (damage > 0)
         {

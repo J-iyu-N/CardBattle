@@ -10,8 +10,8 @@ public class CardSlotController : MonoBehaviour
     public CardData slotCard2;
     [Header("슬롯 이미지")]
     public Sprite SlotEmpty;
-    public SpriteRenderer Slot1;
-    public SpriteRenderer Slot2;
+    public GameObject Slot1;
+    public GameObject Slot2;
     public void OnPageStart()
     {
         // 새 라운드 시작하면 슬롯 초기화
@@ -87,19 +87,27 @@ public class CardSlotController : MonoBehaviour
     {
         if(slotCard1 != null)
         {
-            Slot1.sprite = slotCard1.cardIcon;
+            Slot1.GetComponent<SpriteRenderer>().sprite = slotCard1.cardIcon;
         }
         else
         {
-            Slot1.sprite = SlotEmpty;
+            Slot1.GetComponent<SpriteRenderer>().sprite = SlotEmpty;
         }
         if(slotCard2 != null)
         {
-            Slot2.sprite = slotCard2.cardIcon;
+            Slot2.GetComponent<SpriteRenderer>().sprite = slotCard2.cardIcon;
         }
         else
         {
-            Slot2.sprite = SlotEmpty;
+            Slot2.GetComponent<SpriteRenderer>().sprite = SlotEmpty;
         }
+    }
+    public void DisableChar1Slot()
+    {
+        Slot1.SetActive(false);
+    }
+        public void DisableChar2Slot()
+    {
+        Slot2.SetActive(false);
     }
 }

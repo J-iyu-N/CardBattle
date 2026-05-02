@@ -162,11 +162,13 @@ public class BattleDirector : MonoBehaviour
         if (char2.IsDead() == true) 
         {
             char2Transform.PlayDead();
+            cardSlot.DisableChar2Slot();
             Debug.Log("캐릭터 2 죽음");
         }
         if (char1.IsDead() == true) 
         {
             char1Transform.PlayDead();
+            cardSlot.DisableChar1Slot();
             Debug.Log("캐릭터 1 죽음");
         }
         // 결과 판단 메서드
