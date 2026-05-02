@@ -51,17 +51,6 @@ public class EnemyUIDirecotr : MonoBehaviour
     }
     public void RefreshSkillIcon(RuntimeEnemyState enemyState)
     {
-        if(enemyState.CurrentAction.actionType == EnemyActionType.Special)
-        {
-            slot.sprite = iconList[0];
-        }
-        if(enemyState.CurrentAction.actionType == EnemyActionType.Attack)
-        {
-            slot.sprite = iconList[1];
-        }
-        if(enemyState.CurrentAction.actionType == EnemyActionType.Shield)
-        {
-            slot.sprite = iconList[2];
-        }
+        slot.sprite = enemyState.CurrentAction.icon;
     }
 }

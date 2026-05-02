@@ -22,12 +22,8 @@ public class BattleDirector : MonoBehaviour
     {
         // 페이즈 시작 
         cardSlot.OnPageStart();
-        enemy.OnPageStart();
+        enemy.OnPageStart(char1.IsDead(),char2.IsDead());
         handUIDirector.RefreshHandUI();
-
-        Debug.Log("=== 라운드 시작 ===");
-        Debug.Log($"적 예고 행동: {enemy.State.CurrentAction.actionName}");
-        Debug.Log($"핸드 카드 수: {cardSlot.handController.Hand.Count}");
     }
     public void OncConfrimButton()
     {
@@ -45,7 +41,6 @@ public class BattleDirector : MonoBehaviour
     {
         if (enemy.State.CurrentAction == null)
         {
-            Debug.Log("적 행동 없음");
             yield break;
         }
 

@@ -13,9 +13,9 @@ public class EnemyController : MonoBehaviour
     {
         State = new RuntimeEnemyState(Data);
     }
-    public void OnPageStart()
+    public void OnPageStart(bool char1Dead, bool char2Dead)
     {
-        State.DecideActions(); // 행동 결정
+        State.DecideActions(char1Dead, char2Dead); // 행동 결정
         enemyUI.RefreshUI(State);
     }
     public void ExcuteAction(PlayerCharacterController target)
@@ -23,7 +23,6 @@ public class EnemyController : MonoBehaviour
         int value = State.RollValue(); // 카드 랜던값 결정
         if(State.CurrentAction.actionType == EnemyActionType.Attack)
         {
-            Debug.Log("타겟: "+target);
             target.TakeDamage(value); // 타겟에게 공격
         }
     }

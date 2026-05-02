@@ -13,13 +13,23 @@ public class RuntimeEnemyState
         Data = data;
         CurrentHp = data.maxHP;
     }
-    public void DecideActions()
+    public void DecideActions(bool char1Dead, bool char2Dead)
     {
         List<EnemyAction> pool = Data.actionPool; // 적 행동 리스트
-        if(pool.Count==0) return;
 
         CurrentAction = pool[Random.Range(0,pool.Count)]; // 행동 결정
-        Target = Random.Range(0,2); // 공격 캐릭터 결정
+        if (char1Dead == false && char2Dead == false)
+        {
+            Target = Random.Range(0, 2);
+        }
+        else if (char1Dead == false)
+        {
+            Target = 0;
+        }
+        else if (char2Dead == false)
+        {
+            Target = 1;
+        }
     }
     public int RollValue()
     {
