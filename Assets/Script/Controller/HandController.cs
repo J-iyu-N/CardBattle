@@ -27,7 +27,7 @@ public class HandController : MonoBehaviour
     public void UseCard(CardData card)
     {
         // 핸드 안에 있는 카드 사용 처리
-        //Hand.Remove(card); // 사용한 카드 핸드에서 삭제
+        Hand.Remove(card); // 사용한 카드 핸드에서 삭제
         Discard.Add(card); // 쓴 카드에 추가
     }
     public void ReturnCard(CardData card)

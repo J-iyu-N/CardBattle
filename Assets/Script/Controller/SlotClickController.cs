@@ -6,6 +6,7 @@ public class SlotClickController : MonoBehaviour
     public CardSlotController cardSlot;
     public HandUIDirector handUIDirector;
     public HandController handController;
+    public BattleDirector battleDirector;
     public int slotIndex;
     private void OnMouseDown()
     {
@@ -20,6 +21,7 @@ public class SlotClickController : MonoBehaviour
     }
     public void OnClickSlot1()
     {
+        if(battleDirector.isbattleing) return;
         if(cardSlot.slotCard1 == null) return;
 
         cardSlot.slotCard1 = null;
@@ -30,6 +32,7 @@ public class SlotClickController : MonoBehaviour
     }
     public void OnClickSlot2()
     {
+        if(battleDirector.isbattleing) return;
         if(cardSlot.slotCard2 == null) return;
 
         cardSlot.slotCard2 = null;

@@ -11,6 +11,7 @@ public class BattleDirector : MonoBehaviour
     public PlayerTransformController char2Transform;
     public EnemyUIDirecotr enemyUI;
 
+    public bool isbattleing; // 전투중?
     public bool battleEnd;
     public void Start()
     {
@@ -39,6 +40,7 @@ public class BattleDirector : MonoBehaviour
     /// <returns></returns>
     public IEnumerator ResolvePage()
     {
+        isbattleing = true;
         if (enemy.State.CurrentAction == null)
         {
             yield break;
@@ -85,6 +87,7 @@ public class BattleDirector : MonoBehaviour
         cardSlot.ConfirmCard();
         yield return new WaitForSeconds(0.1f);
         EndPage();
+        isbattleing = false;
         yield return new WaitForSeconds(0.1f);
         StartPage();
     }

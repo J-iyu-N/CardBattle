@@ -767,6 +767,7 @@ MonoBehaviour:
   cardSlot: {fileID: 1426960305}
   handUIDirector: {fileID: 1748704210}
   handController: {fileID: 1529880278}
+  battleDirector: {fileID: 457135839}
   slotIndex: 2
 --- !u!61 &426498149
 BoxCollider2D:
@@ -927,6 +928,7 @@ MonoBehaviour:
   char1Transform: {fileID: 1119081386}
   char2Transform: {fileID: 1427801902}
   enemyUI: {fileID: 862083037}
+  isbattleing: 0
   battleEnd: 0
 --- !u!4 &457135840
 Transform:
@@ -2745,6 +2747,7 @@ MonoBehaviour:
   cardSlot: {fileID: 1426960305}
   handUIDirector: {fileID: 1748704210}
   handController: {fileID: 1529880278}
+  battleDirector: {fileID: 457135839}
   slotIndex: 1
 --- !u!61 &1517115463
 BoxCollider2D:
