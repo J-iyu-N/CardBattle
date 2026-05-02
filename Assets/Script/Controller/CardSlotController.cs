@@ -38,9 +38,8 @@ public class CardSlotController : MonoBehaviour
         }
         if(slotCard1 != null)
         {
-            handController.ReturnCard(slotCard1); // 슬롯에 이미 카드 있으면 교환
+            //handController.ReturnCard(slotCard1); // 슬롯에 이미 카드 있으면 교환
         }
-        handController.Hand.Remove(selectCard);
         slotCard1 = selectCard;
         selectCard = null;
         handUIDirector.RefreshCardHighlite();
@@ -55,9 +54,8 @@ public class CardSlotController : MonoBehaviour
         }
         if(slotCard2 != null)
         {
-            handController.ReturnCard(slotCard2); // 슬롯에 이미 카드 있으면 교환
+            //handController.ReturnCard(slotCard2); // 슬롯에 이미 카드 있으면 교환
         }
-        handController.Hand.Remove(selectCard);
         slotCard2 = selectCard;
         selectCard = null;
         handUIDirector.RefreshCardHighlite();

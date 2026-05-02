@@ -26,7 +26,8 @@ public class HandController : MonoBehaviour
     }
     public void UseCard(CardData card)
     {
-        Hand.Remove(card); // 사용한 카드 삭제
+        // 핸드 안에 있는 카드 사용 처리
+        //Hand.Remove(card); // 사용한 카드 핸드에서 삭제
         Discard.Add(card); // 쓴 카드에 추가
     }
     public void ReturnCard(CardData card)
@@ -40,7 +41,7 @@ public class HandController : MonoBehaviour
         Hand.Add(Deck[0]);
         Deck.RemoveAt(0);
     }
-        public void Shuffle(List<CardData> list)
+    public void Shuffle(List<CardData> list)
     {
         // 카드 순서 섞기
         for(int i =list.Count-1; i>0; i--)

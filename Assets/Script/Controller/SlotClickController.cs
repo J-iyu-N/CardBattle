@@ -22,10 +22,7 @@ public class SlotClickController : MonoBehaviour
     {
         if(cardSlot.slotCard1 == null) return;
 
-        // 슬롯에 들어있던 카드를 저장해서 다시 핸드로 반환
-        CardData returnCard = cardSlot.slotCard1;
         cardSlot.slotCard1 = null;
-        handController.ReturnCard(returnCard);
 
         // UI 갱신
         cardSlot.RefreshSlotIcon();
@@ -35,9 +32,7 @@ public class SlotClickController : MonoBehaviour
     {
         if(cardSlot.slotCard2 == null) return;
 
-        CardData returnCard = cardSlot.slotCard2;
         cardSlot.slotCard2 = null;
-        handController.ReturnCard(returnCard);
         
         cardSlot.RefreshSlotIcon();
         handUIDirector.RefreshHandUI();
