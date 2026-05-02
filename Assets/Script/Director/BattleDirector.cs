@@ -59,12 +59,12 @@ public class BattleDirector : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         // 캐릭터 1,2 행동 처리
-        ApplyAtackAndHeal(char1,cardSlot.slotCard1,char1Transform);
-        yield return new WaitForSeconds(0.6f);
+        StartCoroutine(ApplyAtackAndHeal(char1,cardSlot.slotCard1,char1Transform));
+        yield return new WaitForSeconds(0.8f);
         if(CheckBattleResult()==true) yield break;
 
-        ApplyAtackAndHeal(char2,cardSlot.slotCard2,char2Transform);
-        yield return new WaitForSeconds(0.6f);
+        StartCoroutine(ApplyAtackAndHeal(char2,cardSlot.slotCard2,char2Transform));
+        yield return new WaitForSeconds(0.8f);
         if(CheckBattleResult()==true) yield break;
 
         // 적 행동 처리
@@ -81,7 +81,7 @@ public class BattleDirector : MonoBehaviour
                 char2Transform.PlayDamaged(); // 맞는 모션 재생
             }
         }
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         if(CheckBattleResult()==true) yield break;
 
         cardSlot.ConfirmCard();
@@ -104,23 +104,33 @@ public class BattleDirector : MonoBehaviour
             }
             if( effect.effectType == CardEffectType.Defend)
             {
-                Debug.Log("==========="+effect.percent);
                 target.AddDefend(effect.percent);
             }
         }
     }
-    public void ApplyAtackAndHeal(PlayerCharacterController target, CardData card, PlayerTransformController charTransform)
+    public IEnumerator ApplyAtackAndHeal(PlayerCharacterController target, CardData card, PlayerTransformController charTransform)
     {
         // 공격&힐 적용 메서드
-        if(card == null) return;
+        if(card == null) yield break;
         for(int i =0; i < card.effects.Count; i++)
         {
             CardEffect effect = card.effects[i];
             if( effect.effectType == CardEffectType.Attack)
             {
-                int value = Random.Range(effect.rangeMin,effect.rangeMax+1);
-                enemy.TakeDamage(value);
-                charTransform.PlayAttack(); // 공격 모션 적용
+                if(card.cardType == CardType.Special && target == char2)
+                {
+                    // 캐릭터 2 전용 Special 카드 행동
+                    int value = Random.Range(effect.rangeMin,effect.rangeMax+1);
+                    enemy.TakeDamage(value);
+                    charTransform.PlayAttackGun(); // 공격 모션 적용
+                    yield return new WaitForSeconds(0.5f);
+                }
+                else
+                {
+                    int value = Random.Range(effect.rangeMin,effect.rangeMax+1);
+                    enemy.TakeDamage(value);
+                    charTransform.PlayAttack(); // 공격 모션 적용
+                }
             }
             if( effect.effectType == CardEffectType.Heal)
             {

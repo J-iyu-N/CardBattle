@@ -1908,6 +1908,7 @@ MonoBehaviour:
   - {fileID: -92373883675437233, guid: f06214a296871b343b2f21e5d5a6522b, type: 3}
   - {fileID: 2246656384113612859, guid: f06214a296871b343b2f21e5d5a6522b, type: 3}
   - {fileID: -3484865969669701396, guid: f06214a296871b343b2f21e5d5a6522b, type: 3}
+  attackGun: []
   damaged:
   - {fileID: -4116044808928300203, guid: 9d1cb1b4b9d068748b1a7c32f56f2c1a, type: 3}
   - {fileID: -5098504317855716096, guid: 9d1cb1b4b9d068748b1a7c32f56f2c1a, type: 3}
@@ -2356,6 +2357,11 @@ MonoBehaviour:
   idle:
   - {fileID: -1547024021732660285, guid: c3484b6ec8390854bac2142b462831a5, type: 3}
   atttck:
+  - {fileID: 8976845006580821190, guid: d2e8822d7b76c1042ba6658770349f80, type: 3}
+  - {fileID: -169263243725310486, guid: d2e8822d7b76c1042ba6658770349f80, type: 3}
+  - {fileID: 2526956682547364910, guid: d2e8822d7b76c1042ba6658770349f80, type: 3}
+  - {fileID: 7905896578238342969, guid: d2e8822d7b76c1042ba6658770349f80, type: 3}
+  attackGun:
   - {fileID: -2972596118501953018, guid: 7c056a86bc51e3e48b5a64eed8819a84, type: 3}
   - {fileID: 5786689578172857478, guid: 7c056a86bc51e3e48b5a64eed8819a84, type: 3}
   - {fileID: 7894216609045831092, guid: 7c056a86bc51e3e48b5a64eed8819a84, type: 3}
@@ -2373,8 +2379,8 @@ MonoBehaviour:
   healOther: []
   frameIndex: 0
   frameTimer: 0
-  moveDistance: 1
-  moveDuration: 0.4
+  moveDistance: 5
+  moveDuration: 0.6
 --- !u!1 &1448134917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,20 +2730,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandController
   StartDeck:
-  - {fileID: 11400000, guid: e021b8944b852e642bd95ed7cfdfe389, type: 2}
-  - {fileID: 11400000, guid: 2bdead9d30d82fb4eb2633d8c03b368c, type: 2}
-  - {fileID: 11400000, guid: c95d17117727f2a419de94042c95f5d2, type: 2}
-  - {fileID: 11400000, guid: 1c5fce1bbd5145a4f933d58e40312ef4, type: 2}
-  - {fileID: 11400000, guid: db62317bc5f6afb4ba772b15aac44b76, type: 2}
-  - {fileID: 11400000, guid: 1eb5168be68aa60408b400496f417268, type: 2}
-  - {fileID: 11400000, guid: 9c1d7f722b4c6664b8d33974c7efcd85, type: 2}
-  - {fileID: 11400000, guid: b41b9e3520aebe34093c293a5c1e4232, type: 2}
-  - {fileID: 11400000, guid: 061b0cb765bee8e479ae7f51a910ae03, type: 2}
-  - {fileID: 11400000, guid: df095b454353241488669b55e4da076c, type: 2}
-  - {fileID: 11400000, guid: 3cc57886bd1ab694b9a65fee07fbbed2, type: 2}
-  - {fileID: 11400000, guid: ef814aa8e6b3dc544b86716c39b56304, type: 2}
-  - {fileID: 11400000, guid: 836b252082411414290ac8f0627bf599, type: 2}
-  - {fileID: 11400000, guid: a9b4703c195999b49b9fbcb3c97bcbee, type: 2}
+  - {fileID: 11400000, guid: 377bb0a731e5fd9428fd50361b98c189, type: 2}
+  - {fileID: 11400000, guid: b8886b9755452cb42b7c00aba4606cc9, type: 2}
+  - {fileID: 11400000, guid: 000e0a07fac78c640aab9bbdfbb80ca2, type: 2}
+  - {fileID: 11400000, guid: 128b2f79a862f8e4e98ee8508aa489d7, type: 2}
+  - {fileID: 11400000, guid: b081cc8dfb5f9e54583830aeb70e0d35, type: 2}
+  - {fileID: 11400000, guid: 29f5de8cf9b4767479de95eeda686108, type: 2}
+  - {fileID: 11400000, guid: 088c5a7958528ff4d849dbd6b0b28f4f, type: 2}
+  - {fileID: 11400000, guid: 5c9a34a985124b64690d5a74a8188883, type: 2}
+  - {fileID: 11400000, guid: e51aefdb897586840aa36ac7464672c9, type: 2}
+  - {fileID: 11400000, guid: 61a63ed0800be304cb3d73801ce47e54, type: 2}
+  - {fileID: 11400000, guid: b7bc89b83c377ff47b2a3d5f060e195a, type: 2}
+  - {fileID: 11400000, guid: 2ceb5f5e51b39f542a85dd9e0ee4426c, type: 2}
   handSize: 6
   Hand: []
 --- !u!4 &1529880279

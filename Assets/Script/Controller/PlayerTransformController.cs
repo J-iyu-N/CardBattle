@@ -12,6 +12,7 @@ public class PlayerTransformController : MonoBehaviour
     public Sprite[] currentSprite;
     public Sprite[] idle;
     public Sprite[] atttck;
+    public Sprite[] attackGun;
     public Sprite[] damaged;
     public Sprite[] heal;
     public Sprite[] healOther;
@@ -64,6 +65,21 @@ public class PlayerTransformController : MonoBehaviour
 
         SetIdle();
     }
+    public IEnumerator AttackGunRoutine()
+    {
+        currentSprite = attackGun;
+        float newMonveDistance = 1f;
+        frameIndex = 0;
+        frameTimer = 0f;
+
+        Vector2 startPosition = this.transform.position;
+        Vector2 targetPosition = startPosition + Vector2.right*newMonveDistance;
+
+        yield return MoveTo(startPosition,targetPosition,moveDuration*0.5f); // 가고
+        yield return MoveTo(targetPosition,startPosition,moveDuration*0.5f); // 돌아옴
+
+        SetIdle();
+    }
     public IEnumerator DamagedRoutine()
     {
         currentSprite = damaged;
@@ -107,6 +123,11 @@ public class PlayerTransformController : MonoBehaviour
     {
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(AttackRoutine());
+    }
+    public void PlayAttackGun()
+    {
+        StopCurrentCorutine();
+        moveRoutine = StartCoroutine(AttackGunRoutine());
     }
     public void PlayDamaged()
     {

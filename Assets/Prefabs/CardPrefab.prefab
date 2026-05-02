@@ -325,11 +325,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardUIController
   cardData: {fileID: 0}
-  cardEffect:
-    effectType: 0
-    rangeMin: 0
-    rangeMax: 0
-    percent: 0
   handUIDirector: {fileID: 0}
   cardTransform: {fileID: 975897873573887575}
   icon: {fileID: 3023422731491881747}
@@ -715,7 +710,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -58.84}
-  m_SizeDelta: {x: 140.4127, y: 117.6795}
+  m_SizeDelta: {x: 112, y: 117.6795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2524077774811588678
 CanvasRenderer:
@@ -811,7 +806,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -16.764435, y: 0, z: -15.773529, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
