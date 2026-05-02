@@ -119,6 +119,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &118484392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 118484394}
+  - component: {fileID: 118484393}
+  m_Layer: 0
+  m_Name: TextUIGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &118484393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118484392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617df4b497fc6a640946c89c48cb0672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextUIGenerator
+  damageTextPrefab: {fileID: 500051299220377482, guid: a830be0ad045b8d4f9bf1bcf4694ba7a, type: 3}
+  healTextPrefab: {fileID: 3506839430533725659, guid: 715d2daa2a09edc4f80928d725119d10, type: 3}
+  spawnPoint: {x: 0, y: 0}
+  lifeTime: 1
+--- !u!4 &118484394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118484392}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.08512, y: -0.84034, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &136876762
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,6 +870,7 @@ MonoBehaviour:
     percent: 0
   cardSlotController: {fileID: 1426960305}
   hpUI: {fileID: 1717958875}
+  textUI: {fileID: 118484393}
   shield: 0
   characterIndex: 1
 --- !u!212 &485919717
@@ -1361,6 +1410,7 @@ MonoBehaviour:
     percent: 0
   cardSlotController: {fileID: 1426960305}
   hpUI: {fileID: 1241767466}
+  textUI: {fileID: 118484393}
   shield: 0
   characterIndex: 2
 --- !u!212 &608096509
@@ -3903,6 +3953,7 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: aef2138872cbc4846a732c3293f2f4f2, type: 2}
   hpUI: {fileID: 1124498277}
   enemyUI: {fileID: 862083037}
+  textUI: {fileID: 118484393}
   shield: 0
 --- !u!212 &2053252656
 SpriteRenderer:
@@ -3972,7 +4023,7 @@ Transform:
   m_GameObject: {fileID: 2053252654}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.65, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3998,3 +4049,4 @@ SceneRoots:
   - {fileID: 2008795280}
   - {fileID: 1520938128}
   - {fileID: 1286227970}
+  - {fileID: 118484394}

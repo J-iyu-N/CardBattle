@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
     public RuntimeEnemyState State;
     public HpUIEnemyDirector hpUI;
     public EnemyUIDirecotr enemyUI;
+    public TextUIGenerator textUI;
     public int shield;
 
     void Awake()
@@ -43,6 +44,7 @@ public class EnemyController : MonoBehaviour
             State.ApplyDamage(damage); // 남은 데미지 주기
         }
         hpUI.RefreshHP();
+        textUI.SpawnDamageText(transform.position,damage);
     }
     public void OnPageEnd() // 라운드 끝나면 실드 초기화
     {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCharacterController : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class PlayerCharacterController : MonoBehaviour
     public CardEffect cardEffect;
     public CardSlotController cardSlotController;
     public HpUIDirector hpUI;
+    public TextUIGenerator textUI;
     public int shield;
     public int characterIndex;
     float defendPercent = 1f;
@@ -64,11 +66,13 @@ public class PlayerCharacterController : MonoBehaviour
             State.ApplyDamage(damage);
         }
         hpUI.RefreshHP();
+        textUI.SpawnDamageText(transform.position,damage);
     }
     public void Heal(int amount)
     {
         State.ApplyHeal(amount); // 회복
         hpUI.RefreshHP();
+        textUI.SpawnHealText(transform.position,amount);
     }
     public void OnPageEnd()
     {
