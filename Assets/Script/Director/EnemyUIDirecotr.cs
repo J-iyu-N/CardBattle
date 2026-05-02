@@ -1,6 +1,4 @@
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemyUIDirecotr : MonoBehaviour
 {
@@ -11,11 +9,14 @@ public class EnemyUIDirecotr : MonoBehaviour
     public EnemyAction enemyAction;
     public GameObject LineTo1;
     public GameObject LineTo2;
+    public SpriteRenderer slot;
+    public Sprite[] iconList;
 
     public void RefreshUI(RuntimeEnemyState enemyState)
     {
         if(enemyState.CurrentAction == null) return;
-        if(enemyState.CurrentAction.actionType == EnemyActionType.Attack)
+        RefreshSkillIcon(enemyState);
+        if(enemyState.CurrentAction.actionType == EnemyActionType.Attack || enemyState.CurrentAction.actionType == EnemyActionType.Special)
         {
             // 적 공격 유형이 공격이면 라인 표시
             ShowTargetLine(enemyState.Target);
@@ -48,8 +49,19 @@ public class EnemyUIDirecotr : MonoBehaviour
         LineTo1.SetActive(false);
         LineTo2.SetActive(false);
     }
-    public void ShowSkill()
+    public void RefreshSkillIcon(RuntimeEnemyState enemyState)
     {
-        // 적 행동 표시
+        if(enemyState.CurrentAction.actionType == EnemyActionType.Special)
+        {
+            slot.sprite = iconList[0];
+        }
+        if(enemyState.CurrentAction.actionType == EnemyActionType.Attack)
+        {
+            slot.sprite = iconList[1];
+        }
+        if(enemyState.CurrentAction.actionType == EnemyActionType.Shield)
+        {
+            slot.sprite = iconList[2];
+        }
     }
 }

@@ -9,6 +9,8 @@ public class EnemyAction
     public EnemyActionType actionType;
     public int rangeMin;
     public int rangeMax;
+    public Sprite icon;
+    [TextArea] public string desc;
 }
 [CreateAssetMenu(fileName = "NewEnemy", menuName = "BattleGame/EnemyData")]
 public class EnemyData : ScriptableObject
