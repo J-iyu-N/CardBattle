@@ -36,10 +36,11 @@ public class BattleDirector : MonoBehaviour
         enemyUI.HideTargetLine();
         StartCoroutine(ResolvePage());
     }
+
+    // 전투 진행 
+    // 방어 -> 공격 -> (적) -> 승패체크 -> 다음페이즈/전투종료
     public IEnumerator ResolvePage()
     {
-        // 전투 진행 
-        // 방어 -> 공격 -> (적) -> 승패체크 -> 다음페이즈/전투종료
         if (enemy.State.CurrentAction == null)
         {
             Debug.Log("적 행동 없음");
