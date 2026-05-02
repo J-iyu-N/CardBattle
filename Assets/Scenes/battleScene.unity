@@ -1989,6 +1989,11 @@ MonoBehaviour:
   - {fileID: 7079606082028285454, guid: 6009af2b80fc0e64a93f0dc0b5888d32, type: 3}
   - {fileID: 3266957803872210135, guid: 6009af2b80fc0e64a93f0dc0b5888d32, type: 3}
   - {fileID: -580939264428289277, guid: 6009af2b80fc0e64a93f0dc0b5888d32, type: 3}
+  shield:
+  - {fileID: 8370906369498578701, guid: 48a052d79277f9c469d63161abd1a653, type: 3}
+  - {fileID: 8392483502105224895, guid: 48a052d79277f9c469d63161abd1a653, type: 3}
+  - {fileID: -2184678246910245140, guid: 48a052d79277f9c469d63161abd1a653, type: 3}
+  - {fileID: 4905344411411667339, guid: 48a052d79277f9c469d63161abd1a653, type: 3}
   dead:
   - {fileID: -8023658691642005219, guid: 7fda5b0e4fec1624689f040f9629e399, type: 3}
   - {fileID: 3464275017117197249, guid: 8820a6df7b0dc2145a1523780a4a8361, type: 3}
@@ -2448,6 +2453,11 @@ MonoBehaviour:
   - {fileID: 1203021066475098705, guid: 1145846543a9231428a2ad31ee0a10a0, type: 3}
   - {fileID: -7117786483597132257, guid: 1145846543a9231428a2ad31ee0a10a0, type: 3}
   healOther: []
+  shield:
+  - {fileID: -7448433513580637694, guid: 9d4bcfef3b996eb4396be95a9cd16acd, type: 3}
+  - {fileID: -9200326430715212008, guid: 9d4bcfef3b996eb4396be95a9cd16acd, type: 3}
+  - {fileID: 1627313843800267046, guid: 9d4bcfef3b996eb4396be95a9cd16acd, type: 3}
+  - {fileID: 391877835215488317, guid: 9d4bcfef3b996eb4396be95a9cd16acd, type: 3}
   dead:
   - {fileID: 7484024455343394729, guid: 0ec96b18d27a99346b8a88f560ec1fb2, type: 3}
   - {fileID: -970068590874761654, guid: 0ec96b18d27a99346b8a88f560ec1fb2, type: 3}

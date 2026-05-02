@@ -16,6 +16,7 @@ public class PlayerTransformController : MonoBehaviour
     public Sprite[] damaged;
     public Sprite[] heal;
     public Sprite[] healOther;
+    public Sprite[] shield;
     public Sprite[] dead;
     public int frameIndex =0;
     public float frameTimer = 0;
@@ -99,11 +100,19 @@ public class PlayerTransformController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         SetIdle();
-
     }
     public IEnumerator HealOtherRoutine()
     {
         currentSprite = healOther;
+        frameIndex = 0;
+        frameTimer = 0f;
+        yield return new WaitForSeconds(0.5f);
+
+        SetIdle();
+    }
+    public IEnumerator ShieldRoutine()
+    {
+        currentSprite = shield;
         frameIndex = 0;
         frameTimer = 0f;
         yield return new WaitForSeconds(0.5f);
@@ -157,6 +166,12 @@ public class PlayerTransformController : MonoBehaviour
         if (isDead == true) return;
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(HealOtherRoutine());
+    }
+    public void PlayShield()
+    {
+        if (isDead == true) return;
+        StopCurrentCorutine();
+        moveRoutine = StartCoroutine(ShieldRoutine());
     }
     public void PlayDead()
     {

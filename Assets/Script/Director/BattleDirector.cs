@@ -45,9 +45,10 @@ public class BattleDirector : MonoBehaviour
         }
 
         // 방어 처리
-        ApplyShield(char1, cardSlot.slotCard1);
-        ApplyShield(char2, cardSlot.slotCard2);
-        if(enemy.State.CurrentAction.actionType == EnemyActionType.Shield)
+        StartCoroutine(ApplyShield(char1, cardSlot.slotCard1,char1Transform));
+        yield return new WaitForSeconds(0.1f);
+        StartCoroutine(ApplyShield(char2, cardSlot.slotCard2,char2Transform));
+        if (enemy.State.CurrentAction.actionType == EnemyActionType.Shield)
         {
             // EnemyController의 RuntimeEnemyState의 최근 동작의 타입이 실드일때
             enemy.ApplyShield();
@@ -92,10 +93,10 @@ public class BattleDirector : MonoBehaviour
     /// </summary>
     /// <param name="target"></param>
     /// <param name="card"></param>
-    public void ApplyShield(PlayerCharacterController target, CardData card)
+    public IEnumerator ApplyShield(PlayerCharacterController target, CardData card,PlayerTransformController charTransform)
     {
         // 방어 적용 메서드
-        if(card == null) return;
+        if(card == null) yield break;
         for(int i =0; i < card.effects.Count; i++)
         {
             CardEffect effect = card.effects[i];
@@ -103,6 +104,7 @@ public class BattleDirector : MonoBehaviour
             {
                 int value = Random.Range(effect.rangeMin,effect.rangeMax+1);
                 target.AddShield(value);
+                charTransform.PlayShield();
             }
             if( effect.effectType == CardEffectType.Defend)
             {
