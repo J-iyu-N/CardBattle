@@ -21,6 +21,18 @@ MonoBehaviour:
     rangeMax: 8
     icon: {fileID: 5513019658919644685, guid: fda6e1dbda74fc44e96e930850a47a99, type: 3}
     desc: "\uB300\uBBF8\uC9C0 5-8 \uAC15\uD55C \uACF5\uACA9"
+  - actionName: "\uBCA0\uC5B4\uBB3C\uAE30"
+    actionType: 2
+    rangeMin: 5
+    rangeMax: 8
+    icon: {fileID: 5513019658919644685, guid: fda6e1dbda74fc44e96e930850a47a99, type: 3}
+    desc: "\uB300\uBBF8\uC9C0 5-8 \uAC15\uD55C \uACF5\uACA9"
+  - actionName: "\uCE68\uC2DD"
+    actionType: 0
+    rangeMin: 2
+    rangeMax: 4
+    icon: {fileID: 3922187522527889168, guid: fda6e1dbda74fc44e96e930850a47a99, type: 3}
+    desc: "\uB300\uBBF8\uC9C0 2-4 \uC57D\uD55C \uACF5\uACA9"
   - actionName: "\uCE68\uC2DD"
     actionType: 0
     rangeMin: 2

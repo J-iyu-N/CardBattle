@@ -151,7 +151,7 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 500051299220377482, guid: a830be0ad045b8d4f9bf1bcf4694ba7a, type: 3}
   healTextPrefab: {fileID: 3506839430533725659, guid: 715d2daa2a09edc4f80928d725119d10, type: 3}
   spawnPoint: {x: 0, y: 0}
-  lifeTime: 1
+  lifeTime: 0.5
 --- !u!4 &118484394
 Transform:
   m_ObjectHideFlags: 0

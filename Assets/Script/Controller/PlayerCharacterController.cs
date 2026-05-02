@@ -52,7 +52,6 @@ public class PlayerCharacterController : MonoBehaviour
     public void AddDefend(float percent)
     {
         defendPercent -= percent;
-        Debug.Log("방어 발동, 받는피해율: " +defendPercent);
     }
     public void TakeDamage(int amount)
     {
@@ -64,9 +63,14 @@ public class PlayerCharacterController : MonoBehaviour
         if (damage > 0)
         {
             State.ApplyDamage(damage);
+            textUI.SpawnDamageText(transform.position,damage);
+        }
+        else if (damage <= 0)
+        {
+            textUI.SpawnDamageText(transform.position,0);
         }
         hpUI.RefreshHP();
-        textUI.SpawnDamageText(transform.position,damage);
+        //textUI.SpawnDamageText(transform.position,damage);
     }
     public void Heal(int amount)
     {

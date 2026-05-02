@@ -11,7 +11,7 @@ public class TextUIGenerator : MonoBehaviour
     {
         // 여기서 판단해서 아래 매서드 호출
         float posX = Random.Range(-1f,1f);
-        float posY = Random.Range(-1f,1f);
+        float posY = Random.Range(-0.5f,0.5f);
 
         Vector2 spawnPoint = targetPos + new Vector2(posX,posY);
 

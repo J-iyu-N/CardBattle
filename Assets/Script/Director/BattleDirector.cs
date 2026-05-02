@@ -80,6 +80,7 @@ public class BattleDirector : MonoBehaviour
                 char2Transform.PlayDamaged(); // 맞는 모션 재생
             }
         }
+        yield return new WaitForSeconds(0.8f);
         if(CheckBattleResult()==true) yield break;
 
         cardSlot.ConfirmCard();
