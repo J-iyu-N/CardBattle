@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class EnemyUIDirecotr : MonoBehaviour
@@ -12,9 +13,18 @@ public class EnemyUIDirecotr : MonoBehaviour
     public SpriteRenderer slot;
     public Sprite[] iconList;
 
+    [Header("판넬")]
+    public GameObject panel;
+    public TextMeshProUGUI skillName;
+    public TextMeshProUGUI SkillDesc;
+
     public void RefreshUI(RuntimeEnemyState enemyState)
     {
+        Debug.Log("RefreshUI 실행 오브젝트: " + gameObject.name);
+
+        this.enemyState = enemyState;
         if(enemyState.CurrentAction == null) return;
+
         RefreshSkillIcon(enemyState);
         if(enemyState.CurrentAction.actionType == EnemyActionType.Attack || enemyState.CurrentAction.actionType == EnemyActionType.Special)
         {
@@ -52,5 +62,21 @@ public class EnemyUIDirecotr : MonoBehaviour
     public void RefreshSkillIcon(RuntimeEnemyState enemyState)
     {
         slot.sprite = enemyState.CurrentAction.icon;
+    }
+    public void ShowPanel()
+    {
+        if (enemyState == null) return;
+        if (enemyState.CurrentAction == null) return;
+
+        EnemyAction action = enemyState.CurrentAction;
+
+        panel.SetActive(true);
+
+        skillName.text = action.actionName;
+        SkillDesc.text = action.desc;
+    }
+    public void HidePanel()
+    {
+        panel.SetActive(false);
     }
 }

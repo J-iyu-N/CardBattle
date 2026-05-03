@@ -23,5 +23,5 @@ MonoBehaviour:
   effects:
   - effectType: 3
     rangeMin: 3
-    rangeMax: 5
+    rangeMax: 7
     percent: 0

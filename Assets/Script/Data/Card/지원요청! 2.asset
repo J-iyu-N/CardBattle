@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d6dc7e7b4d1a5042acb240c0c51e3a5, type: 3}
-  m_Name: "\uC9C0\uC6D0\uC694\uCCAD! 1"
+  m_Name: "\uC9C0\uC6D0\uC694\uCCAD! 2"
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   sortIndex: 5
   cardName: "\uC9C0\uC6D0\uC694\uCCAD!"
