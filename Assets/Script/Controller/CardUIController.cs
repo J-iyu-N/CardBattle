@@ -22,6 +22,10 @@ public class CardUIController : MonoBehaviour, IPointerClickHandler, IPointerEnt
     public GameObject highliteChar1;
     public GameObject highliteChar2;
 
+    [Header("사운드")]
+    public AudioClip hover;
+    public AudioClip click;
+    public AudioSource audioSource;
     // 선택 
     bool isSelected;
     bool isHovered;
@@ -53,13 +57,16 @@ public class CardUIController : MonoBehaviour, IPointerClickHandler, IPointerEnt
         // 카드 클릭 인식
         // CardSlotController 의 selected에 전달
         cardSlotController.OncardClicked(cardData);
-        Debug.Log($"선택 카드: {cardData.cardName}");
 
         // 카드 강조
         CheckSelected();
         UpdateHighlite();
         handUIDirector.RefreshCardHighlite();
         cardTransform.PlayHoverIn();
+
+        //클릭 사운드
+        audioSource.clip = click;
+        GetComponent<AudioSource>().Play();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -69,6 +76,11 @@ public class CardUIController : MonoBehaviour, IPointerClickHandler, IPointerEnt
         UpdateHighlite();
         handUIDirector.RefreshCardHighlite();
         cardTransform.PlayHoverIn();
+
+        // 호버사운드
+
+        audioSource.clip = hover;
+        GetComponent<AudioSource>().Play();
     }
     public void OnPointerExit(PointerEventData eventData)
     {

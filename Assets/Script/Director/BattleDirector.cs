@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
+using NUnit.Framework;
 public class BattleDirector : MonoBehaviour
 {
     public PlayerCharacterController char1;
@@ -38,14 +39,16 @@ public class BattleDirector : MonoBehaviour
     {
         // 카드 확정 버튼 누름 (클릭 이벤트 받기용)
         if(battleEnd==true) return;
+        if(isbattleing==true) return;
+
+        GetComponent<AudioSource>().Play();
+
         enemyUI.HideTargetLine();
         StartCoroutine(ResolvePage());
     }
-    /// <summary>
+
     /// 전투 진행 
     // 방어 -> 공격 -> (적) -> 승패체크 -> 다음페이즈/전투종료
-    /// </summary>
-    /// <returns></returns>
     public IEnumerator ResolvePage()
     {
         isbattleing = true;
@@ -99,11 +102,8 @@ public class BattleDirector : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         StartPage();
     }
-    /// <summary>
+
     /// 방어 계열 카드 적용
-    /// </summary>
-    /// <param name="target"></param>
-    /// <param name="card"></param>
     public IEnumerator ApplyShield(PlayerCharacterController target, CardData card,PlayerTransformController charTransform)
     {
         // 방어 적용 메서드
@@ -120,16 +120,12 @@ public class BattleDirector : MonoBehaviour
             if( effect.effectType == CardEffectType.Defend)
             {
                 target.AddDefend(effect.percent);
+                charTransform.PlayShield();
             }
         }
     }
-    /// <summary>
+
     /// 전투 & 힐 계열 카드 적용
-    /// </summary>
-    /// <param name="target"></param>
-    /// <param name="card"></param>
-    /// <param name="charTransform"></param>
-    /// <returns></returns>
     public IEnumerator ApplyAtackAndHeal(PlayerCharacterController target, CardData card, PlayerTransformController charTransform)
     {
         // 공격&힐 적용 메서드
@@ -166,10 +162,7 @@ public class BattleDirector : MonoBehaviour
             }
         }
     }
-    /// <summary>
     /// 전투 결과 체크
-    /// </summary>
-    /// <returns></returns>
     public bool CheckBattleResult()
     {
         if (char2.IsDead() == true) 

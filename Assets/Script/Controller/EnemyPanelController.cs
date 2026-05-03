@@ -6,6 +6,7 @@ public class EnemySkillHoverController : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        GetComponent<AudioSource>().Play();
         enemyUIDirecotr.ShowPanel();
     }
 

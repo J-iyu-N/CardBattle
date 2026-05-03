@@ -44,6 +44,7 @@ public class CardSlotController : MonoBehaviour
         selectCard = null;
         handUIDirector.RefreshCardHighlite();
         RefreshSlotIcon();
+        GetComponent<AudioSource>().Play();
     }
     public void Onchar2Click()
     {
@@ -60,6 +61,7 @@ public class CardSlotController : MonoBehaviour
         selectCard = null;
         handUIDirector.RefreshCardHighlite();
         RefreshSlotIcon();
+        GetComponent<AudioSource>().Play();
     }
     public void ConfirmCard()
     {

@@ -20,8 +20,6 @@ public class EnemyUIDirecotr : MonoBehaviour
 
     public void RefreshUI(RuntimeEnemyState enemyState)
     {
-        Debug.Log("RefreshUI 실행 오브젝트: " + gameObject.name);
-
         this.enemyState = enemyState;
         if(enemyState.CurrentAction == null) return;
 

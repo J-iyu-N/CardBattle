@@ -25,6 +25,15 @@ public class PlayerTransformController : MonoBehaviour
     public float moveDistance = 1.5f;
     public float moveDuration = 0.5f;
 
+    [Header("사운드")]
+    public AudioClip attack;
+    public AudioClip attack2;
+    public AudioClip healing;
+    public AudioClip shieldAndDefend;
+    public AudioClip damage;
+    public AudioClip fallDead;
+    public AudioSource audioSource;
+
     private Coroutine moveRoutine;
 
     void Awake()
@@ -140,36 +149,53 @@ public class PlayerTransformController : MonoBehaviour
     public void PlayAttack()
     {
         if (isDead == true) return;
+        audioSource.clip = attack;
+        audioSource.volume = 1f;
+        audioSource.Play();
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(AttackRoutine());
     }
     public void PlayAttackGun()
     {
         if (isDead == true) return;
+        audioSource.clip = attack2;
+        audioSource.volume = 0.5f;
+        audioSource.Play();
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(AttackGunRoutine());
     }
     public void PlayDamaged()
     {
         if (isDead == true) return;
+        audioSource.clip = damage;
+        audioSource.volume = 1f;
+        audioSource.Play();
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(DamagedRoutine());
     }
     public void PlayHeal()
     {
         if (isDead == true) return;
+        audioSource.clip = healing;
+        audioSource.volume = 0.3f;
+        audioSource.Play();
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(HealRoutine());
     }
     public void PlayHealOther()
     {
         if (isDead == true) return;
+        audioSource.clip = healing;
+        audioSource.Play();
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(HealOtherRoutine());
     }
     public void PlayShield()
     {
         if (isDead == true) return;
+        audioSource.clip = shieldAndDefend;
+        audioSource.volume = 0.7f;
+        audioSource.Play();
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(ShieldRoutine());
     }
@@ -177,6 +203,9 @@ public class PlayerTransformController : MonoBehaviour
     {
         if (isDead == true) return;
         isDead = true;
+        audioSource.clip = fallDead;
+        audioSource.volume = 1f;
+        audioSource.Play();
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(DeadRoutine());
         spriteRenderer.sprite = dead[3];

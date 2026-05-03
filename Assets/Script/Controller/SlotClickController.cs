@@ -23,7 +23,8 @@ public class SlotClickController : MonoBehaviour
     {
         if(battleDirector.isbattleing) return;
         if(cardSlot.slotCard1 == null) return;
-
+        
+        GetComponent<AudioSource>().Play();
         cardSlot.slotCard1 = null;
 
         // UI 갱신
@@ -35,6 +36,7 @@ public class SlotClickController : MonoBehaviour
         if(battleDirector.isbattleing) return;
         if(cardSlot.slotCard2 == null) return;
 
+        GetComponent<AudioSource>().Play();
         cardSlot.slotCard2 = null;
         
         cardSlot.RefreshSlotIcon();

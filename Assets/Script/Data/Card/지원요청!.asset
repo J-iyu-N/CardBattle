@@ -16,7 +16,7 @@ MonoBehaviour:
   cardName: "\uC9C0\uC6D0\uC694\uCCAD!"
   cardIcon: {fileID: -7441382367286639308, guid: 81b0c6f573909a34292ab76f82b1dea6, type: 3}
   cardType: 0
-  cardOwner: 0
+  cardOwner: 2
   description: "A\uAC00 \uC0C1\uCC98 \uCE58\uC720\uB97C \uB3D5\uC2B5\uB2C8\uB2E4.
     \n\uD68C\uBCF5\uB7C9\uC774 \uAE30\uBCF8 \uC751\uAE09\uCC98\uCE58\uBCF4\uB2E4
     \uB192\uC2B5\uB2C8\uB2E4.\n\n\uB300\uC0C1: B"
