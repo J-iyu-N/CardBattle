@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 public class BattleDirector : MonoBehaviour
 {
     public PlayerCharacterController char1;
@@ -18,6 +19,13 @@ public class BattleDirector : MonoBehaviour
         char1.State = new RuntimeCharacterState(char1.Data);
         char2.State = new RuntimeCharacterState(char2.Data);
         StartPage();
+    }
+    public void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            OncConfrimButton();
+        }
     }
     public void StartPage()
     {
