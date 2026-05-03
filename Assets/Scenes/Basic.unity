@@ -5769,6 +5769,13 @@ MonoBehaviour:
   frameTimer: 0
   moveDistance: 5
   moveDuration: 0.6
+  attack: {fileID: 0}
+  attack2: {fileID: 0}
+  healing: {fileID: 0}
+  shieldAndDefend: {fileID: 0}
+  damage: {fileID: 0}
+  fallDead: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!4 &1556227147
 Transform:
   m_ObjectHideFlags: 0
