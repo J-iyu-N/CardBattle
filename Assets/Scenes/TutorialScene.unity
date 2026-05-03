@@ -293,15 +293,18 @@ MonoBehaviour:
   - "A: \uBD80\uC791\uC6A9\uC778\uC9C0 \uAE09\uACA9\uD788 \uC548 \uC88B\uC544\uC84C\uC5B4\uC694."
   - "A: \uACF5\uACA9\uC131\uC744 \uB744\uACE0 \uC788\uC73C\uB2C8 \uC870\uC2EC\uD574\uC57C
     \uB429\uB2C8\uB2E4. "
+  - "A: \uB610, \uAC70\uC758 \uC6C0\uC9C1\uC784\uC744 \uBCF4\uC774\uC9C0 \uC54A\uB294
+    \uAC83\uC774 \uD2B9\uC9D5\uC774\uB2C8 \uC8FC\uC758\uD558\uC138\uC694."
   - "A-07: \uC73C\uC5B4\uC5B4.... "
-  - "A: \uC9C4\uC555\uC744 \uC704\uD55C \uC804\uD22C\uB97C \uC900\uBE44\uD558\uC138\uC694."
+  - "A: \uC790 \uC774\uC81C \uC9C4\uC555\uC744 \uC704\uD55C \uC804\uD22C\uB97C \uC900\uBE44\uD558\uC8E0."
   - "B: \uC54C\uACA0\uC5B4."
   panelPositions:
   - {x: -400, y: 215}
-  - {x: -645, y: 240}
-  - {x: -645, y: 240}
+  - {x: -625, y: 240}
+  - {x: -625, y: 240}
+  - {x: -625, y: 240}
   - {x: 410, y: 295}
-  - {x: -645, y: 240}
+  - {x: -625, y: 240}
   - {x: -400, y: 215}
   nextSceneName: BattleScene
 --- !u!4 &83881383
@@ -797,19 +800,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1801444122640833211, guid: e7edc28e32ef12e4ca18369ee4238c27, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1832.6
+      value: 2083.8
       objectReference: {fileID: 0}
     - target: {fileID: 1801444122640833211, guid: e7edc28e32ef12e4ca18369ee4238c27, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 598.04
+      value: 598
       objectReference: {fileID: 0}
     - target: {fileID: 1801444122640833211, guid: e7edc28e32ef12e4ca18369ee4238c27, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0075073
+      value: 0.000058174
       objectReference: {fileID: 0}
     - target: {fileID: 1801444122640833211, guid: e7edc28e32ef12e4ca18369ee4238c27, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 58.17003
+      value: 58.19
       objectReference: {fileID: 0}
     - target: {fileID: 7485564880374559452, guid: e7edc28e32ef12e4ca18369ee4238c27, type: 3}
       propertyPath: m_fontSize

@@ -186,6 +186,7 @@ public class PlayerTransformController : MonoBehaviour
     {
         if (isDead == true) return;
         audioSource.clip = healing;
+        audioSource.volume = 0.3f;
         audioSource.Play();
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(HealOtherRoutine());
@@ -194,7 +195,7 @@ public class PlayerTransformController : MonoBehaviour
     {
         if (isDead == true) return;
         audioSource.clip = shieldAndDefend;
-        audioSource.volume = 0.7f;
+        audioSource.volume = 0.6f;
         audioSource.Play();
         StopCurrentCorutine();
         moveRoutine = StartCoroutine(ShieldRoutine());

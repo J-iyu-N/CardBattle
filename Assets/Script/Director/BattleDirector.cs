@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.InputSystem;
-using NUnit.Framework;
+using UnityEngine.SceneManagement;
 public class BattleDirector : MonoBehaviour
 {
     public PlayerCharacterController char1;
@@ -11,10 +10,17 @@ public class BattleDirector : MonoBehaviour
     public HandUIDirector handUIDirector;
     public PlayerTransformController char1Transform;
     public PlayerTransformController char2Transform;
+    public EnemyTransformController enemyTransform;
     public EnemyUIDirecotr enemyUI;
+
+    [Header("결과")]
+    public GameObject winPanel;
+    public GameObject losePanel;
 
     public bool isbattleing; // 전투중?
     public bool battleEnd;
+    public bool isWin;
+    public bool isLose;
     public void Start()
     {
         char1.State = new RuntimeCharacterState(char1.Data);
@@ -23,6 +29,21 @@ public class BattleDirector : MonoBehaviour
     }
     public void Update()
     {
+        if(battleEnd == true)
+            {
+                if(Input.GetKeyDown(KeyCode.Space))
+                {
+                    if(isLose == true)
+                    {
+                        SceneManager.LoadScene("LabScene");
+                    }
+                    else if(isWin == true)
+                    {
+                        SceneManager.LoadScene("endingScene");
+                    }
+                }
+                return;
+            }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             OncConfrimButton();
@@ -65,6 +86,7 @@ public class BattleDirector : MonoBehaviour
         {
             // EnemyController의 RuntimeEnemyState의 최근 동작의 타입이 실드일때
             enemy.ApplyShield();
+            enemyTransform.PlayShield();
             if(CheckBattleResult()==true) yield break;
         }
         yield return new WaitForSeconds(0.1f);
@@ -81,6 +103,7 @@ public class BattleDirector : MonoBehaviour
         // 적 행동 처리
         if(enemy.State.CurrentAction.actionType != EnemyActionType.Shield)
         {
+            enemyTransform.PlayAttack();
             if(enemy.State.Target == 0)
             {
                 enemy.ExcuteAction(char1);
@@ -141,12 +164,14 @@ public class BattleDirector : MonoBehaviour
                     int value = Random.Range(effect.rangeMin,effect.rangeMax+1);
                     enemy.TakeDamage(value);
                     charTransform.PlayAttackGun(); // 공격 모션 적용
+                    enemyTransform.PlayDamaged();
                     yield return new WaitForSeconds(0.5f);
                 }
                 else
                 {
                     int value = Random.Range(effect.rangeMin,effect.rangeMax+1);
                     enemy.TakeDamage(value);
+                    enemyTransform.PlayDamaged();
                     charTransform.PlayAttack(); // 공격 모션 적용
                 }
             }
@@ -180,13 +205,20 @@ public class BattleDirector : MonoBehaviour
         // 결과 판단 메서드
         if (enemy.IsDead() == true)
         {
+            enemyTransform.PlayDead();
             battleEnd = true;
+            isWin = true;
+            isLose = false;
+            winPanel.SetActive(true);
             Debug.Log("승리");
             return true;
         }
         if (char1.IsDead() == true && char2.IsDead() == true)
         {
             battleEnd = true;
+            isWin = false;
+            isLose = true;
+            losePanel.SetActive(true);
             Debug.Log("패배");
             return true;
         }
