@@ -39,7 +39,7 @@ public class BattleDirector : MonoBehaviour
                     }
                     else if(isWin == true)
                     {
-                        SceneManager.LoadScene("endingScene");
+                        //SceneManager.LoadScene("endingScene"); 시간되면
                     }
                 }
                 return;

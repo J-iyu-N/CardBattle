@@ -1,19 +1,17 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DialogueDirector : MonoBehaviour
 {
-    public GameObject tutorialPanel;
-    public RectTransform tutorialPanelRect;
-    public TextMeshProUGUI tutorialText;
+    public GameObject panel;
+    public RectTransform panelRect;
+    public TextMeshProUGUI text;
+    public GameObject tutorial;
 
     [TextArea]
     public string[] messages;
 
     public Vector2[] panelPositions;
-
-    public string nextSceneName = "BattleScene";
 
     private int currentIndex;
 
@@ -21,14 +19,11 @@ public class DialogueDirector : MonoBehaviour
     {
         currentIndex = 0;
 
-        if (tutorialPanel != null)
+        if (panel != null)
         {
-            tutorialPanel.SetActive(true);
+            panel.SetActive(true);
         }
-
-        ShowCurrentStep();
     }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
@@ -36,30 +31,17 @@ public class DialogueDirector : MonoBehaviour
             NextStep();
         }
     }
-
-    public void ShowCurrentStep()
-    {
-        if (tutorialText != null && messages != null && messages.Length > 0)
-        {
-            tutorialText.text = messages[currentIndex];
-        }
-
-        if (tutorialPanelRect != null && panelPositions != null && currentIndex < panelPositions.Length)
-        {
-            tutorialPanelRect.anchoredPosition = panelPositions[currentIndex];
-        }
-    }
-
     public void NextStep()
     {
         currentIndex += 1;
 
         if (currentIndex >= messages.Length)
         {
-            SceneManager.LoadScene(nextSceneName);
+            panel.SetActive(false);
+            tutorial.SetActive(true);
             return;
         }
-
-        ShowCurrentStep();
+        text.text = messages[currentIndex];
+        panelRect.anchoredPosition = panelPositions[currentIndex];
     }
 }
