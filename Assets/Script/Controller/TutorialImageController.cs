@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TutorialImageDirector : MonoBehaviour
+public class TutorialImageController : MonoBehaviour
 {
     // 이미지 튜토리얼
     public Image tutorialImage;

@@ -778,7 +778,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 147b74500a143ee4cacfce7fd77c63dc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 0.11
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -994,7 +994,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7307552838652339835, guid: 80ed452eb34cec743ad8d0ffaa0c9e1f, type: 3}
+  m_Sprite: {fileID: 7307552838652339835, guid: 479ecb8a7291ad842af38de5dc728f10, type: 3}
   m_Color: {r: 0.72156864, g: 0.9607843, b: 0.79607844, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3747,7 +3747,7 @@ MonoBehaviour:
   selectCard: {fileID: 0}
   slotCard1: {fileID: 0}
   slotCard2: {fileID: 0}
-  SlotEmpty: {fileID: 7307552838652339835, guid: 80ed452eb34cec743ad8d0ffaa0c9e1f, type: 3}
+  SlotEmpty: {fileID: 7307552838652339835, guid: 479ecb8a7291ad842af38de5dc728f10, type: 3}
   Slot1: {fileID: 1517115459}
   Slot2: {fileID: 426498145}
 --- !u!4 &1426960306
@@ -4293,7 +4293,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7307552838652339835, guid: 80ed452eb34cec743ad8d0ffaa0c9e1f, type: 3}
+  m_Sprite: {fileID: 7307552838652339835, guid: 479ecb8a7291ad842af38de5dc728f10, type: 3}
   m_Color: {r: 0.72156864, g: 0.9607843, b: 0.79607844, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4942,7 +4942,7 @@ SpriteRenderer:
   m_Size: {x: 3.5535364, y: 3.9299998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1691313003
 BoxCollider2D:

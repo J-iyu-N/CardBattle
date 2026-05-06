@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: Enemy1Data
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: "\uBCF4\uC2A4"
-  maxHP: 55
+  maxHP: 65
   actionPool:
   - actionName: "\uBCA0\uC5B4\uBB3C\uAE30"
     actionType: 0
-    rangeMin: 8
+    rangeMin: 9
     rangeMax: 14
     icon: {fileID: 5513019658919644685, guid: fda6e1dbda74fc44e96e930850a47a99, type: 3}
-    desc: "\uB300\uBBF8\uC9C0 8-14 \uAC15\uD55C \uACF5\uACA9"
+    desc: "\uB300\uBBF8\uC9C0 9-14 \uAC15\uD55C \uACF5\uACA9"
   - actionName: "\uBCA0\uC5B4\uBB3C\uAE30"
     actionType: 0
-    rangeMin: 8
+    rangeMin: 9
     rangeMax: 14
     icon: {fileID: 5513019658919644685, guid: fda6e1dbda74fc44e96e930850a47a99, type: 3}
-    desc: "\uB300\uBBF8\uC9C0 8-14 \uAC15\uD55C \uACF5\uACA9"
+    desc: "\uB300\uBBF8\uC9C0 9-14 \uAC15\uD55C \uACF5\uACA9"
   - actionName: "\uCE68\uC2DD"
     actionType: 0
     rangeMin: 5

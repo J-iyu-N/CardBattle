@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemySkillHoverController : MonoBehaviour
+public class EnemyPanelController : MonoBehaviour
 {
     public EnemyUIDirecotr enemyUIDirecotr;
 
